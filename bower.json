@@ -1,0 +1,12 @@
+{
+  "name": "Smart FRRO",
+  "authors": [
+    "Fr Agnel"
+  ],
+  "description": "Smart India Hackathon 2018",
+  "dependencies": {
+    "jquery": "^1.11.3",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.7.0"
+  }
+}
