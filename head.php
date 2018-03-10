@@ -10,7 +10,10 @@
     <meta name="viewport" content="width=device-width" />
     <link href="assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/datatables.net/style.css" />
     <script type="text/javascript" src="assets/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
     <script type="text/javascript" src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
