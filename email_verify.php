@@ -8,7 +8,9 @@ $to='raut.atharva1997@gmail.com';
 $username='Atharva';
 $password='Raut';
 $hash=md5($username.$password);		//hash of usrname and passwd
-$message='localhost/hashverify?hash='.$hash;
+$message='localhost/smartfrro/hashverify.php?hash='.$hash;
+
+
 
 mail($to,$subject,$message,'From:test.com')
 
