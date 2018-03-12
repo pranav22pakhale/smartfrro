@@ -1,0 +1,23 @@
+ body{
+
+    background-image: url('images/source2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .ex{
+
+    margin-top: 220px;
+  }
+
+ .ex1{
+
+
+    padding-left: 400px;
+  }
+
+  .ex2{
+
+
+    padding-left: 350px;
+  }

@@ -4,7 +4,7 @@
 //require_once 'swiftmailer-master\lib\swift_required.php';
 
 $subject='Email verification from FRRO';
-$to='jaydeepranoliya24@gmail.com';
+$to='smartfrro@gmail.com';
 $username='Atharva';
 $password='Raut';
 $hash=md5($username.$password);		//hash of usrname and passwd
