@@ -29,7 +29,7 @@
     <div class="container-fluid" style="width:75rem">
         <div class="row">
 
-            <form action="../submit" id="formentry" class="form-horizontal" role="form" data-parsley-validate novalidate>
+            <form action="reg_form_db_link.php" id="formentry" class="form-horizontal" role="form" data-parsley-validate novalidate method='POST'>
                 <div class="container-fluid shadow">
                     <div class="row">
                         <div id="valErr" class="row viewerror clearfix hidden">
@@ -45,19 +45,19 @@
 			    <label class="control-label control-label-left col-sm-3" for="field1">surname</label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field1" class="form-control k-textbox" data-role="text" data-parsley-errors-container="#errId1" type="text"><span id="errId1" class="error"></span></div>
+                <input id="field1" name="surname" class="form-control k-textbox" data-role="text" data-parsley-errors-container="#errId1" type="text"><span id="errId1" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field2">given_name <span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field2" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId2" type="text"><span id="errId2" class="error"></span></div>
+                <input id="field2" name="given_name" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId2" type="text"><span id="errId2" class="error"></span></div>
                 
 		</div><div class="form-group" style="display: block;">
 			    <label class="control-label control-label-left col-sm-3" for="field3">Sex<span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <select id="field3" class="form-control" data-role="select" selected="selected" required="required" data-parsley-errors-container="#errId3">
+                <select id="field3" name="sex" class="form-control" data-role="select" selected="selected" required="required" data-parsley-errors-container="#errId3">
 		  
 		  
 		  
@@ -69,97 +69,104 @@
 			    <label class="control-label control-label-left col-sm-3" for="field9">father_name <span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field9" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId4" type="text"><span id="errId4" class="error"></span></div>
+                <input id="field9" name="father_name" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId4" type="text"><span id="errId4" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field10">mother_name </label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field10" class="form-control k-textbox" data-role="text" data-parsley-errors-container="#errId5" type="text"><span id="errId5" class="error"></span></div>
+                <input id="field10" name="mother_name"class="form-control k-textbox" data-role="text" data-parsley-errors-container="#errId5" type="text"><span id="errId5" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field15">spouse_name</label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field15" class="form-control k-textbox" data-role="text" data-parsley-errors-container="#errId6" type="text"><span id="errId6" class="error"></span></div>
+                <input id="field15" name="spouse_name" class="form-control k-textbox" data-role="text" data-parsley-errors-container="#errId6" type="text"><span id="errId6" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field20">dob<span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <span style="" class="k-widget k-datepicker k-header form-control"><span class="k-picker-wrap k-state-default"><input id="field20" class="form-control k-input" data-role="date" style="width: 100%;" role="textbox" aria-haspopup="true" aria-expanded="false" aria-owns="field20_dateview" aria-disabled="false" aria-readonly="false" aria-label="Current focused date is null" data-error-container="#errfield20" required="required" data-parsley-errors-container="#errId7" type="text"><span unselectable="on" class="k-select" role="button" aria-controls="field20_dateview"><span unselectable="on" class="k-icon k-i-calendar">select</span></span></span></span><span id="errId7" class="error"></span></div>
+                <span style="" class="k-widget k-datepicker k-header form-control"><span class="k-picker-wrap k-state-default">
+                	<input id="field20" name="dob" class="form-control k-input" data-role="date" style="width: 100%;" role="textbox" aria-haspopup="true" aria-expanded="false" aria-owns="field20_dateview" aria-disabled="false" aria-readonly="false" aria-label="Current focused date is null" data-error-container="#errfield20" required="required" data-parsley-errors-container="#errId7" type="text"><span unselectable="on" class="k-select" role="button" aria-controls="field20_dateview"><span unselectable="on" class="k-icon k-i-calendar">select</span></span></span></span><span id="errId7" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field21">place_of_birth <span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field21" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId8" type="text"><span id="errId8" class="error"></span></div>
+                <input id="field21" name="place_of_birth" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId8" type="text"><span id="errId8" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field22">birth_city <span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field22" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId9" type="text"><span id="errId9" class="error"></span></div>
+                <input id="field22" name="birth_city" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId9" type="text"><span id="errId9" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field23">birth_country <span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field23" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId10" type="text"><span id="errId10" class="error"></span></div>
+                <input id="field23" name="birth_country" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId10" type="text"><span id="errId10" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field24">height_cm <span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field24" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId11" type="text"><span id="errId11" class="error"></span></div>
+                <input id="field24" name="height_cm" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId11" type="text"><span id="errId11" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field25">religion<span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field25" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId12" type="text"><span id="errId12" class="error"></span></div>
+                <input id="field25" name="religion" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId12" type="text"><span id="errId12" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field26">identification_mark </label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field26" class="form-control k-textbox" data-role="text" data-parsley-errors-container="#errId13" type="text"><span id="errId13" class="error"></span></div>
+                <input id="field26" name="identification_mark" class="form-control k-textbox" data-role="text" data-parsley-errors-container="#errId13" type="text"><span id="errId13" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field27">present_nationality <span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field27" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId14" type="text"><span id="errId14" class="error"></span></div>
+                <input id="field27" name="present_nationality" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId14" type="text"><span id="errId14" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field28">previous_nationality <span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field28" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId15" type="text"><span id="errId15" class="error"></span></div>
+                <input id="field28" name="previous_nationality" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId15" type="text"><span id="errId15" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field29">manner_of_acquiring present nationality <span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field29" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId16" type="text"><span id="errId16" class="error"></span></div>
-                
-		</div><div class="form-group">
-			    <label class="control-label control-label-left col-sm-3">dual_nationality </label>
-			    <div class="controls col-sm-9">
-                    
-                <label class="radio" for="radio45"><input value="Option 1" id="radio45" name="field44" data-parsley-errors-container="#errId17" type="radio">yes</label><label class="radio" for="radio46"><input value="Option 2" id="radio46" name="field44" data-parsley-errors-container="#errId17" type="radio">no</label><span id="errId17" class="error"></span></div>
-                
-		</div><div class="form-group">
-			    <label class="control-label control-label-left col-sm-3">indian_origin </label>
-			    <div class="controls col-sm-9">
-                    
-                <label class="radio" for="radio50"><input value="Option 1" id="radio50" name="field49" data-parsley-errors-container="#errId18" type="radio">yes</label><label class="radio" for="radio51"><input value="Option 2" id="radio51" name="field49" data-parsley-errors-container="#errId18" type="radio">no</label><span id="errId18" class="error"></span></div>
+                <input id="field29" name="manner_of_acquiring" class="form-control k-textbox" data-role="text" required="required" data-parsley-errors-container="#errId16" type="text"><span id="errId16" class="error"></span></div>
                 
 		</div><div class="form-group" style="display: block;">
-			    <label class="control-label control-label-left col-sm-3">have_you_serve_in_<br>defence_force </label>
+			    <label class="control-label control-label-left col-sm-3" for="field3">dual_nationality<span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <label class="radio" for="radio35"><input value="Option 2" id="radio35" name="field33" data-parsley-errors-container="#errId19" type="radio">yes</label><label class="radio" for="radio36"><input value="Option 3" id="radio36" name="field33" data-parsley-errors-container="#errId19" type="radio">no</label><span id="errId19" class="error"></span></div>
+                <select id="field3" name="dual_nationality" class="form-control" data-role="select" selected="selected" required="required" data-parsley-errors-container="#errId3">
+		  
+		  <option value="1">Yes</option><option value="0">No</option></select><span id="errId3" class="error"></span></div>
+                
+		</div><div class="form-group" style="display: block;">
+			    <label class="control-label control-label-left col-sm-3" for="field3">indian_origin<span class="req"> *</span></label>
+			    <div class="controls col-sm-9">
+                    
+                <select id="field3" name="indian_origin" class="form-control" data-role="select" selected="selected" required="required" data-parsley-errors-container="#errId3">
+		  
+		  <option value="1">Yes</option><option value="0">No</option></select><span id="errId3" class="error"></span></div>
+                
+		</div><div class="form-group" style="display: block;">
+			    <label class="control-label control-label-left col-sm-3" for="field3">defence_force<span class="req"> *</span></label>
+			    <div class="controls col-sm-9">
+                    
+                <select id="field3" name="defence_force" class="form-control" data-role="select" selected="selected" required="required" data-parsley-errors-container="#errId3">
+		  
+		  <option value="1">Yes</option><option value="0">No</option></select><span id="errId3" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field37">profile_pic </label>
@@ -173,7 +180,7 @@
                     
                 <input id="field38" class="form-control k-textbox" data-role="text" data-parsley-errors-container="#errId21" type="text"><span id="errId21" class="error"></span></div>
                 <br>
-                <button id="button2" type="button" class="btn btn-success alignment" style="margin-left: 37%;">Button</button>
+                <button id="button2" type="submit" class="btn btn-success alignment" style="margin-left: 37%;">Button</button>
            
 		</div></div>
                                     </div>
