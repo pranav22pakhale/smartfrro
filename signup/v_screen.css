@@ -1,0 +1,65 @@
+@media only screen and (max-width:1920px){
+#thumbs2{height:486px;}
+#thumbs2 ul li{height:220px !important;}
+.instruc_left ul li{font-size:15px;}
+.tab-content .overview p{font-size:16px;}
+.news_section h3{width:100%; text-align:center; padding:0px;}
+#thumbs2 ul li{margin-top:4px; box-sizing:border-box;}
+}
+
+@media only screen and (max-width:1680px){
+.tab-content .overview p{font-size:16px;}
+.instruc_left ul li:first-child::after{border-width:20px; margin-top:-20px;}
+#thumbs2{height:384px;}
+#thumbs2 ul li{height:175px !important;}
+}
+@media only screen and (max-width:1540px){
+.instruc_left .nav-tabs > li > a{padding:13px 15px 13px 5px;}
+.main_login h3{font-size:25px;}
+}
+@media only screen and (max-width:1379px){
+.form-group label{min-width:240px; max-width:240px;}
+.left_sidebar{height:484px;}
+.form-control2{width:71.4%;}
+.instruc_left ul li:first-child{font-size:18px;}
+#thumbs2{height:470px;}
+#thumbs2 ul li{height:150px !important;}
+.instruc_left ul li, .tab-content .overview p{font-size:14px;}
+.overview h3{font-size:17px;}
+.overview h3:before, .overview h3:after{top:1px; width:100px;}
+
+}
+@media only screen and (max-width:1280px){
+.form-control2{width:73%;}
+.instruc_left ul li:first-child::after{border-width:15px; margin-top:-10px;}
+.instruc_left ul li:after{border-width:15px; margin-top:-15px;}
+.instruc_left ul li{font-size:13px;}
+.news_section h3{font-size:20px;}
+.tab-content .overview p{font-size:13px;}
+.overview h4{margin:15px 0 10px 0;}	
+.information h2{font-size:24px;}
+#thumbs2{height:445px;}
+#thumbs2 ul li{height:135px !important;}
+}
+@media only screen and (max-width:1199px){
+.outer_menu .navbar-nav > li a{padding:15px 23px;}
+}
+@media only screen and (max-width:1024px){	
+.tab-content .overview p{margin:0 0 15px 0;}
+.overview{width:100%;}
+.information h2{font-size:18px;}
+#thumbs2{height:335px;}
+#thumbs2 ul li{height:105px !important;}
+
+.mdl-radio.is-upgraded{padding:2px 0px 0 25px;}
+.service_main{font-size:15px;}
+}
+@media only screen and (max-width:991px){	
+.outer_menu .navbar-nav > li{font-size:14px;}
+.outer_menu .navbar-nav > li > a{padding:15px 8px;}
+.form-group label{min-width:180px; max-width:180px;}
+.form-group .form-control{width:160px;}
+.registration_form h4{font-size:19px;}
+.main_services{width:96%; margin-top:80px;}
+.main_services ul li{width:46%;}
+}

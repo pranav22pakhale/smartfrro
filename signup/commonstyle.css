@@ -1,0 +1,93 @@
+/* Style definition for body tag */
+
+.textBoxDashed 
+{
+	text-transform : uppercase;
+    color: #333333;
+    font-size: 12px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background-color: #FFFFFF;
+    border: 1px solid #999999;
+}
+
+.textBoxDashed1 
+{
+	color: #333333;
+    font-size: 12px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background-color: #FFFFFF;
+    border: 1px solid #999999;
+}
+
+/* Style definitions for table */
+.heading1
+{
+	/*FONT-WEIGHT: bold;*/
+	FONT-SIZE: 20pt; 
+	FONT-FAMILY: Verdana, Tahoma;
+	COLOR: #284224;
+	LETTER-SPACING: 3pt;
+}
+
+.heading2
+{
+	/*FONT-WEIGHT: bold;*/
+	FONT-SIZE: 13pt; 
+	FONT-FAMILY: Verdana, Tahoma;
+	COLOR: #284224;
+	LETTER-SPACING: 1pt;
+}
+
+TD 
+{
+	COLOR: #284224; 
+	FONT-SIZE: 10pt;
+	FONT-FAMILY: Verdana, Tahoma;
+}
+
+/* Style for Form elements */
+INPUT,SELECT,TEXTAREA
+{
+	FONT-FAMILY:  Verdana;
+	COLOR:#284224;
+	FONT-SIZE:10pt;
+}
+
+/* Style for Mandatory field(*) */
+.mandatory
+{
+	COLOR: red;
+	FONT-SIZE: 10pt;
+	/*FONT-WEIGHT: bold;
+	border:thick dotted red;*/
+}
+
+.heading2x
+{
+	/*FONT-WEIGHT: bold;*/
+	FONT-SIZE: 13pt; 
+	FONT-FAMILY: Verdana, Tahoma;
+	COLOR:#CC33CC;
+	LETTER-SPACING: 1pt;
+	font-weight:bolder;
+}
+
+.footerx
+{
+    /*FONT-WEIGHT: bold;*/
+    FONT-SIZE: 10pt;
+    FONT-FAMILY: Times New Roman, Times, serif;
+    COLOR:#666666;
+    LETTER-SPACING: 1pt;
+    font-weight:bolder;
+}
+
+.loginButton
+{
+	background:#BFE1F2;
+	border:thin;
+	border-color:#1C8FB0;
+	border-style:outset;
+	color:#000088;
+	cursor:pointer;
+}
