@@ -42,5 +42,7 @@
 	$sql="insert into sign_up (email_id,mobile_no,surname,given_name,dob,gender,passport_no,nationality,password) values('$emailId','$mobileNumber','$surname','$given_name','$date_of_birth','$gender','$passportnumber','$nationality','$password_hash')";
 
 	mysqli_query($con,$sql);
+	
+	header("Location:login_user.php");
 
 ?>
