@@ -16,7 +16,7 @@
 	
 
 	while($row = mysqli_fetch_assoc($result)) {
-		if($row["email_id"] == $uname && $row["password"] == $password){
+		if($row["email_id"] == $uname && $row["password"] == $password && $row["verification"] == 'yes'){
 			$flag = 1;
 			break;
 		}
@@ -29,7 +29,8 @@
 	}
 	else{
 		$_SESSION['errorMessage'] = 1;
-		header("Location:new 1.php");
+		header("Location:login_user
+			.php");
 		exit();
 	}	
 ?>
