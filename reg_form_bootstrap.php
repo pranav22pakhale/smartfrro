@@ -24,11 +24,16 @@
 </head>
 
 <body>
-    
+    <div> 
+    <?php 
+    session_start();
+    echo $_SESSION["username"];
+    ?>
+	</div>
     <div class="container-fluid" style="width:75rem">
         <div class="row">
 
-            <form action="reg_form_db_link.php" id="formentry" class="form-horizontal" role="form" data-parsley-validate novalidate method='POST'  enctype="multipart/form-data">
+            <form action="reg_form_db_link.php" id="formentry" class="form-horizontal" role="form" data-parsley-validate novalidate method='POST' >
                 <div class="container-fluid shadow">
                     <div class="row">
                         <div id="valErr" class="row viewerror clearfix hidden">

@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	require_once 'database_connection.php';
 	if(isset($_POST['emailId']))
 	{
@@ -37,12 +38,48 @@
 		$password=$_POST['password'];
 		$password_hash=password_hash($_POST['password'], PASSWORD_BCRYPT);
 	}
-	
+	$_SESSION["uname"] = $emailId;
+	$_SESSION["pass"] = $password;
 
 	$sql="insert into sign_up (email_id,mobile_no,surname,given_name,dob,gender,passport_no,nationality,password) values('$emailId','$mobileNumber','$surname','$given_name','$date_of_birth','$gender','$passportnumber','$nationality','$password_hash')";
 
 	mysqli_query($con,$sql);
-	
-	header("Location:login_user.php");
+
+
+	$subject='Email verification from FRRO';
+	$to=$emailId;
+	$username=$emailId;
+	$password=$password;
+	$hash=md5($username.$password);		//hash of usrname and passwd
+
+	$mes2='localhost/smartfrro/hashverify.php?hash='.$hash;
+
+	$message = '
+	<html>
+	<head>
+	  <title>Birthday Reminders for August</title>
+	</head>
+	<body>
+		<table>
+	    <tr>
+	      <th>
+	      		<a href='.$mes2.'>Click here for Verification</a>
+	      </th>
+	    </tr>
+	  </table>
+	</body>
+	</html>
+	';
+	// To send HTML mail, the Content-type header must be set
+	$headers[] = 'MIME-Version: 1.0';
+	$headers[] = 'Content-type: text/html; charset=iso-8859-1';
+
+	// Additional headers
+	$headers[] = 'From: Smart FRRO <smartfrro@gmail.com>';
+	$headers[] = 'Cc: smartfrro@gmail.com';
+	$headers[] = 'Bcc: smartfrro@gmail.com';
+
+	mail($to,$subject,$message,implode("\r\n", $headers));
+	//header("Location:hashverify.php");
 
 ?>

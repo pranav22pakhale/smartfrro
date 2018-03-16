@@ -13,6 +13,7 @@
 	$result = mysqli_query($con, $sql);
 
 	while($row = mysqli_fetch_assoc($result)) {
+
 		if($row["id"] == $uname && $row["password"] == $password){
 			$flag = 1;
 			break;
@@ -23,7 +24,7 @@
 		$_SESSION["username"] = $uname;
 		
 		$_SESSION["password"] = $password;
-		header("Location:http://localhost/database/form.php");
+		header("Location:http://localhost/smartfrro/form.php");
 	}
 	else{
 		$_SESSION['errorMessage'] = 1;

@@ -1,11 +1,5 @@
 <?php
-	
-	define('mysql_host','localhost');
-define('mysql_user','root');
-define('mysql_pwd','');
-//$db= new mysqli('localhost','root','','frro') or die("problem");
-$con = mysqli_connect(mysql_host,mysql_user,mysql_pwd) or die('Can not connect to database..try again');
-mysqli_select_db($con,'frro') or die(mysqli_error($con));
+	require_once 'database_connection.php';
 
 	if(isset($_POST['surname']))
 	{
@@ -37,13 +31,12 @@ if(isset($_POST['dob']))
 	{
 		$dob=$_POST['dob'];
 	}
-	echo $dob;
+	
 if(isset($_POST['place_of_birth']))
 	{
 		$place_of_birth=$_POST['place_of_birth'];
 	}
-	echo "place_of_birth";
-if(isset($_POST['birth_city']))
+	if(isset($_POST['birth_city']))
 	{
 		$birth_city=$_POST['birth_city'];
 	}
@@ -96,12 +89,48 @@ if(isset($_POST['birth_country']))
 	{
 		$defence_force=$_POST['defence_force'];
 	}
-	
+	/*if(isset($_POST[""])) {
+	$target_dir = "pdfuploads/";
+	$t=time();
+	$target_file = $target_dir .$t. basename($_FILES["fileToUpload"]["name"]);
+	//echo $target_file;
+	$uploadOk = 1;
+	$FileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+	// Check if image file is a actual image or fake image
+
+	   
+
+	    // Check if file already exists
+	if (file_exists($target_file)) {
+	    echo "Sorry, file already exists.";
+	    $uploadOk = 0;
+	}
+	// Check file size
+	if ($_FILES["fileToUpload"]["size"] > 500000) {
+	    echo "Sorry, your file is too large.";
+	    $uploadOk = 0;
+	}
+	// Allow certain file formats
+	if($FileType != "pdf" ){
+	    echo "Sorry, only pdf files are allowed.";
+	    $uploadOk = 0;
+	}
+	// Check if $uploadOk is set to 0 by an error
+	if ($uploadOk == 0) {
+	    echo "Sorry, your file was not uploaded.";
+	// if everything is ok, try to upload file
+	} else {
+	    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+	        //echo "<br>The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded successfully.";
+	    } else {
+	        //echo "Sorry, there was an error uploading your file.";
+	    }
+	}
+	}*/
 
 
-	$sql="insert into registration(`id`, `surname`, `given_name`, `sex`, `father_name`, `mother_name`, `spouse_name`, `dob`, `place_of_birth`, `birth_city`, `birth_country`, `height_cm`, `religion`, `identification_mark`, `present_nationality`, `previous_nationality`, `manner_of_acquiring present nationality`, `dual_nationality`, `indian_origin`, `have_you_serve_in_defenece_force`, `profile_pic`, `document`)values('','$surname','$given_name','$sex','$father_name','$mother_name','$spouse_name','$dob','$place_of_birth','$birth_city','$birth_country',$height_cm,'$religion','$identification_mark','$present_nationality','$previous_nationality','$manner_of_acquiring',1,1,1,1,1)";
+	$sql="insert into registration(`id`, `surname`, `given_name`, `sex`, `father_name`, `mother_name`, `spouse_name`, `dob`, `place_of_birth`, `birth_city`, `birth_country`, `height_cm`, `religion`, `identification_mark`, `present_nationality`, `previous_nationality`, `manner_of_acquiring present nationality`, `dual_nationality`, `indian_origin`, `have_you_serve_in_defenece_force`, `profile_pic`, `document`,'email_id')values('','$surname','$given_name','$sex','$father_name','$mother_name','$spouse_name','$dob','$place_of_birth','$birth_city','$birth_country',$height_cm,'$religion','$identification_mark','$present_nationality','$previous_nationality','$manner_of_acquiring',1,1,1,1,1,'abc')";
 		mysqli_query($con,$sql);
-		//mysqli_query($con,'INSERT INTO testtable (1,1)');
-	//$db->query("INSERT INTO testtable values('".$surname."',' ')");
-	//$db->query("INSEResT INTO registration VALUES(,'".$surname."','".$given_name."','".$sex."','".$father_name."','".$mother_name."','".$spouse_name."','".$dob."','".$place_of_birth."','".$birth_city."','".$birth_country."',".$height_cm.",'".$religion."','".$identification_mark."','".$present_nationality."','".$previous_nationality."','".$manner_of_acquiring."',".$dual_nationality.",".$indian_origin.",".$defence_force.",'xyz','xyz')");
+		echo 'ghost';
+		
 ?>
