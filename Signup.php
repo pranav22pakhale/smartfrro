@@ -61,9 +61,17 @@ require_once 'head.php';
 	}
     
  function refresh_captcha(){
+  
+              <?php
+                  
+                  $rand = substr(md5(rand()), 0, 6);                
+                  //$rand=substr(rand(),0,4); //only show 4 numbers
+                  $_SESSION['security_code'] = $rand;
+
+              ?>
 		
 		$('#captcha').val("");
-		$('#efrro_captcha_id').attr('src','/eservices/captcha.jsp?rand='+Math.random());	
+		$('#efrro_captcha_id').attr('src','create_image.php');	
 	} 
  
  
@@ -170,7 +178,13 @@ require_once 'head.php';
          	   return false;    	  
          	}
     		
-    		
+    		 var simple = '<?php echo $rand; ?>';
+        if(simple != document.applicationform.capatcha.value)
+        {
+          document.getElementById("captcha_error").innerHTML="Captcha Not Matched!";
+          document.applicationform.capatcha.focus();
+          return false;
+        }
     		
     		
         	var email = $("#emailId").val();
@@ -422,7 +436,14 @@ require_once 'head.php';
               <input name="captcha" type="text" id="capatcha" class="form-control col-md-4 " size="43" maxlength="6" autocomplete="OFF" placeholder="Enter Captcha value" style="margin-bottom:15px;">  
             
           <div class="form-group text-center" style="float: left; width: 100%;">
-            <img src="/eservices/ecaptcha.jsp" alt="captcha" id="efrro_captcha_id">
+            <?php
+                  
+                  $rand = substr(md5(rand()), 0, 6);                
+                  //$rand=substr(rand(),0,4); //only show 4 numbers
+                  $_SESSION['security_code'] = $rand;
+
+              ?>
+            <img src="create_image.php" alt="captcha" id="efrro_captcha_id">
              <i class="fa fa-refresh" onclick="refresh_captcha()" style="cursor:pointer"></i>
           </div>
               <div class="sub">

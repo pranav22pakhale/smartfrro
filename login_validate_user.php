@@ -14,23 +14,18 @@
 
     
 	
+
 	while($row = mysqli_fetch_assoc($result)) {
-		if($row["email_id"] == $uname && password_verify($password, $row["password"])){
+		if($row["email_id"] == $uname && $row["password"] == $password){
 			$flag = 1;
 			break;
 		}
 	}
-
-	$sql = "SELECT passport_no,mobile_no FROM sign_up WHERE email_id = $uname";
-	$result = mysqli_query($con,$sql);
-
 	if($flag == 1)
 	{
 		$_SESSION["username"] = $uname;
 		$_SESSION["password"] = $password;
-		$_SESSION["mobile_no"] = $row["mobile_no"];
-		$_SESSION["passport_no"] = $row["passport_no"];
-		header("Location:http://localhost/smartfrro/reg.php");
+		header("Location:http:cap_ver.php");
 	}
 	else{
 		$_SESSION['errorMessage'] = 1;

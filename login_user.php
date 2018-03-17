@@ -17,67 +17,15 @@
 	<script src="jquery.min.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function(){
-	$("#reload").click(function() {
-
-$("#img").remove();
-var id = Math.random();
-$('<img id="img" src="captcha.php?id='+id+'"/>').appendTo("#imgdiv");
-id ='';
-});	
-
-
-	$("#btn-login").click(function(){
-		
-		
-		if($('#login-emailid').val()=='')
-	       {
-			   alert(" Email Id  must not be blank.");
-	    	   $('#login-emailid').focus();
-	    	   return false;    	  
-	    	}
-		
-		else if($('#login-password').val()=='')
-		{
-			alert("Password can not be blank.")
-			$('#login-password').focus();
-			return false;
-		}
-		
-		/*else if($('#capatcha').val()=='')
-			{
-			alert("Capatcha must not be blank.")
-			$('#capatcha').focus();
-			return false;
-			}*/
-		
-		else
-{ //validating CAPTCHA with user input text
-var dataString = 'captcha=' + captcha;
-$.ajax({
-type: "POST",
-url: "captcha2.php",
-data: dataString,
-success: function(html) {
-alert(html);
-}
-});
-}
-});
-		
-});				
-
-
-function refresh_captcha(){
-	$('#login-emailid').val("");
-	$('#login-password').val("");
-	$('#captcha').val("");
-	$('#efrro_captcha_id').attr('src',"ecapatcha.jsp?rand="+Math.random());	
-}
-
 
 </script>
-<style>
+<style type="text/css">
+
+.color
+{
+	color:#FF0000;
+}
+
 body{
 
     background-image: url('images/source2.jpg');
@@ -105,35 +53,44 @@ body{
 			</div> 
 			<div class="panel-body panel-pad"> 
 				<div id="login-alert" class="alert alert-danger col-sm-12 login-alert"></div> 
-					<form action="login_validate_user.php" id="loginform" class="form-horizontal" role="form" method="POST">
+					<form action="login_validate_user.php" id="loginform" class="form-horizontal" name="form1" onsubmit="return validate()" role="form" method="POST">
 					 <?php
 		              if (isset($_SESSION['errorMessage']))
 		              {
-		                echo "<span style='color:red;'>Check your input</span>";
-		                session_destroy();
+		                echo "<span style='color:red;'>Email or password is incorrect</span>";
+		                //session_destroy();
 		              }
 		            ?>
 					 	<div class="input-group margT25"> 
 							<span class="input-group-addon">
 								<i class="glyphicon glyphicon-user"></i>
 							</span> 
-							<input id="login-emailid" type="text" class="form-control" name="emailid" value="" placeholder="email"> 
+							<input id="login-emailid" type="text" class="form-control" name="emailid" placeholder="email" required> 
 						</div> 
 						<div class="input-group margT25"> 
 							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> 
-							<input id="login-password" type="password" class="form-control" name="password" placeholder="password"> 
+							<input id="login-password" type="password" class="form-control" name="password" placeholder="password" required> 
 						</div> 
 						
 						
                 <div class="input-group margT25"> 
 							<span class="input-group-addon"></span>
-							<input id="capatcha" type="text" class="form-control" name="captcha" placeholder="Enter capcha value"> 
+							<input id="captcha" type="text" class="form-control" name="captcha" placeholder="Enter capcha value" required>
+							<span id="captcha_error" class="color"></span> 
 						</div> 
 						
 						<div class="form-group text-center" id="imgdiv">
-            <img src="captcha.php" alt="captcha" id="img"/>
-             <i class="fa fa-refresh" id="reload"  style='cursor:pointer' style="vertical-align: middle;"></i>
-          </div> 
+							<?php
+									
+									$rand = substr(md5(rand()), 0, 6);								
+									//$rand=substr(rand(),0,4); //only show 4 numbers
+									$_SESSION['security_code'] = $rand;
+
+ 							?>
+				            <img id="captcha_code" src="create_image.php" />
+							<button name="recaptcha" type="button" class="btnRefresh" onclick='window.location.reload();' >Refresh</button>
+
+        				</div> 
 						<div class="input-group"> 
 							<div class="checkbox"> 
 								<label> 
@@ -145,14 +102,14 @@ body{
 						<!-- Button --> 
 							<div class="col-sm-12 controls"> 
 								<!--a id="btn-login" href="#" class="btn btn-block btn-success">Login </a--> 
-								<button type=submit>login</button>
+								<button type="submit">login</button>
 							</div> 
 						</div> 
 						<div class="form-group"> 
 							<div class="col-md-12 control"> 
 								<div class="no-acc"> 
 									Don't have an account! 
-									<a href="#"> Sign Up Here </a> 									 
+									<a href="Signup.php"> Sign Up Here </a> 									 
 								</div> 
 							</div> 
 						</div> 
@@ -164,3 +121,23 @@ body{
 	
 </body>
 </html>
+
+<script type="text/javascript">
+
+function validate() {
+
+	    var simple = '<?php echo $rand; ?>';
+		if(simple != document.form1.captcha.value)
+		{
+			document.getElementById("captcha_error").innerHTML="Captcha Not Matched!";
+			document.form1.captcha.focus();
+			return false;
+		}
+		return true;
+
+
+			
+}
+</script>
+
+<!-- 'window.location.reload();' -->
