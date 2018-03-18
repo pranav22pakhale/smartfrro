@@ -16,7 +16,7 @@
 	
 
 	while($row = mysqli_fetch_assoc($result)) {
-		if($row["email_id"] == $uname && $row["password"] == $password){
+		if($row["email_id"] == $uname && password_verify($password, $row["password"])){
 			$flag = 1;
 			break;
 		}
