@@ -1,4 +1,8 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+<html>
+<head>
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    </head>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 <?php
 
 
@@ -7,9 +11,9 @@ require_once 'head.php';
 
 include('database_connection.php');
 
-$sql = "SELECT id, sign_up.given_name, passport_no 
-        FROM registration, sign_up 
-        WHERE registration.given_name=sign_up.given_name AND verification='verified'";
+$sql = "SELECT id, email_id, passport_no 
+        FROM registration 
+        WHERE verification = 'required'";
 $result = mysqli_query($con, $sql);
 
 ?>
@@ -18,9 +22,9 @@ $result = mysqli_query($con, $sql);
 <table id="example" class="display nowrap" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>id</th>
-                <th>given_name</th>
-                <TH>Passport No.</TH>
+                <th>ID</th>
+                <th>EMAIL ID</th>
+                <TH>PASSPORT NO</TH>
             </tr>
         </thead>
         <tbody>
@@ -32,7 +36,7 @@ if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
         echo "<td>" .$row["id"] . "</td>";
-        echo "<td> <a href='details.php?id=".$row['id']."'>" . $row["given_name"]. "</a></td>";
+        echo "<td> <a href='details.php?id=".$row['id']."'>" . $row["email_id"]. "</a></td>";
         echo "<td>".$row["passport_no"]."</td>";
         echo "</tr>";
     }
