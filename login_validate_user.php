@@ -14,6 +14,7 @@
 
     
 	
+
 	while($row = mysqli_fetch_assoc($result)) {
 		if($row["email_id"] == $uname && password_verify($password, $row["password"])){
 			$flag = 1;
@@ -21,25 +22,18 @@
 		}
 	}
 
-	
-
-	$sql = "select surname from sign_up where email_id = $uname";
-
-		$result= mysqli_query($con,$sql);
-
-		$row = mysqli_fetch_row($result);
-
-		//echo $row[0];
-	
-
 
 	if($flag == 1)
 	{
 		$_SESSION["username"] = $uname;
 		$_SESSION["password"] = $password;
+
 		//$_SESSION["mobile_no"] = $row[1];
 		$_SESSION["pass"] = $row[0];
 		header("Location:http://localhost/smartfrro/main_registration_form.php");
+
+		
+
 	}
 	else{
 		$_SESSION['errorMessage'] = 1;
