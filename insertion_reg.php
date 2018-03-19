@@ -41,6 +41,10 @@
 	{
 		$prev_nationality= $_POST['prev_nationality'];
 	}
+	if($_POST['sex'])
+	{
+		$sex= $_POST['sex'];
+	}
 	if(isset($_POST['origin']))
 	{
 		$origin=$_POST['origin'];

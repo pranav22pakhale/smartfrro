@@ -74,10 +74,14 @@
                 <input type="file" name="fileToUpload1" id="fileToUpload">
                 <input type="text" name="pre_nationality" placeholder="Present Nationality" />
                 <input type="text" name="prev_nationality" placeholder="Previous Nationality" />
-                <input type="text" name="origin" placeholder="Indian Origin"  />
+                <div class="form-group">
+                <small class="left">Sex</small>
+                <select class="form-control" id="exampleSelect1" name="sex">
+                <option>male</option>
+                <option>female</option></select></div>
                 <div class="form-group">
                 <small class="left">Indian origin</small>
-                <select class="form-control" id="exampleSelect1">
+                <select class="form-control" id="exampleSelect1" name="origin">
                 <option>yes</option>
                 <option>no</option></select></div>
                 <input type="text" name="email_id" placeholder="Email Id" />
