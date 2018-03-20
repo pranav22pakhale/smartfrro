@@ -30,6 +30,7 @@
 
 		//$_SESSION["mobile_no"] = $row[1];
 		$_SESSION["pass"] = $row[0];
+
 		header("Location:http://localhost/smartfrro/main_registration_form.php");
 
 		

@@ -7,18 +7,18 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="assets/bower_components/Ionicons/css/ionicons.min.css">
   <!-- jvectormap -->
-  <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+  <link rel="stylesheet" href="assets/bower_components/jvectormap/jquery-jvectormap.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="assets/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="assets/dist/css/skins/_all-skins.min.css">
 
   <script type="text/JavaScript">
          
@@ -193,7 +193,7 @@
       <!-- Info boxes -->
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box" onClick="window.location.href='ENTER FILE NAME';"style="cursor: pointer;" >
+          <div class="info-box" onClick="window.location.href='frro_dashboard_tables/frro_unverified.php';"style="cursor: pointer;" >
             <span class="info-box-icon bg-aqua"><img class="ion ion-ios-gear-outline" src="images/question-mark.png"></img></span>
 
             <div class="info-box-content">
@@ -218,7 +218,7 @@
         </div>
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box" onClick="window.location.href='ENTER FILE NAME';"style="cursor: pointer;">
+          <div class="info-box" onClick="window.location.href='frro_dashboard_tables/frro_verified.php';"style="cursor: pointer;">
             <span class="info-box-icon bg-red"><img class="fa fa-google-plus" src="images/check-mark.png"></img></span>
 
             <div class="info-box-content">
@@ -247,7 +247,7 @@
         <div class="clearfix visible-sm-block"></div>
 
         <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box" onClick="window.location.href='ENTER FILE NAME';"style="cursor: pointer;">
+          <div class="info-box" onClick="window.location.href='frro_dashboard_tables/frro_awaiting_police_enquiry.php';"style="cursor: pointer;">
             <span class="info-box-icon bg-green"><img class="ion ion-ios-cart-outline" src="images/guard.png"></img></span>
 
             <div class="info-box-content">
@@ -272,7 +272,7 @@
         </div>
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box" onClick="window.location.href='ENTER FILE NAME';"style="cursor: pointer;">
+          <div class="info-box" onClick="window.location.href='frro_dashboard_tables/frro_rejected.php';"style="cursor: pointer;">
             <span class="info-box-icon bg-yellow" ><img class="ion ion-ios-people-outline" src="images/cancel.png"></img></span>
 
             <div class="info-box-content">
@@ -732,28 +732,28 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="assets/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="assets/dist/js/adminlte.min.js"></script>
 <!-- Sparkline -->
-<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<script src="assets/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- jvectormap  -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 <!-- SlimScroll -->
-<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- ChartJS -->
 <!--script src="bower_components/chart.js/Chart.js"></script-->
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 
-<script src="canvasjs/canvasjs.min.js"></script>
-<script src="dist/js/pages/dashboard2.js"></script>
+<script src="assets/canvasjs/canvasjs.min.js"></script>
+<script src="assets/dist/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+<script src="assets/dist/js/demo.js"></script>
 </body>
 </html>
 

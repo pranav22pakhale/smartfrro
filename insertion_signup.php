@@ -45,7 +45,8 @@
 
 	mysqli_query($con,$sql);
 
-
+	//$sql = "insert into login (email_id,password) values ('$emailId','$password')";
+	//mysqli_query($con,$sql);
 	$subject='Email verification from FRRO';
 	$to=$emailId;
 	$username=$emailId;

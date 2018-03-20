@@ -16,8 +16,8 @@ echo '<br>';
 echo 'hash is'.$hash;
 if($genhash == $hash)
 {
-	//$sql = "UPDATE 'sign_up' SET 'verification'='yes' WHERE 'email_id' = $_SESSION["uname"]";
-	//$result = mysqli_query($con, $sql);
+	$sql = "UPDATE 'sign_up' SET 'verification'='yes' WHERE 'email_id' = $_SESSION["uname"]";
+	$result = mysqli_query($con, $sql);
 	
 
 	/*$sql = "select * from sign_up";
