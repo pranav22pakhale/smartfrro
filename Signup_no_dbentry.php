@@ -354,7 +354,7 @@ require_once 'head.php';
     	<div class="panel panel-default">
     <div class="panel-heading"><h1>Registration Form</h1></div>
     <div class="panel-body">
-    <form name="applicationform" id="eregistration_id" method="post" name="form1" action="login_user.php">
+    <form action="insertion_signup.php"name="applicationform" id="eregistration_id" method="post" name="form1" >
               <div class="form-group col-sm-6">
                 <label for="emailId">Email Id<span class="mandfield">*</span></label>
                 <input type="text" name="emailId" id="emailId" class="form-control" size="43" maxlength="50" autocomplete="OFF" placeholder="Email Id" value="">
