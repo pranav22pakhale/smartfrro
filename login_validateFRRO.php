@@ -24,11 +24,11 @@
 		$_SESSION["username"] = $uname;
 		
 		$_SESSION["password"] = $password;
-		header("Location:http://localhost/smartfrro/form.php");
+		header("Location:http://localhost/smartfrro/Dashboard_frro.php");
 	}
 	else{
 		$_SESSION['errorMessage'] = 1;
-		header("Location:loginfrro.php");
+		header("Location:loginFRRO.php");
 		exit();
 	}	
 ?>
