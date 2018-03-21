@@ -6,9 +6,9 @@ require_once 'head.php';
 
 include('database_connection.php');
 
-$sql = "SELECT id, sign_up.given_name, passport_no 
-        FROM registration, sign_up 
-        WHERE registration.given_name=sign_up.given_name AND police_verification='required'";
+$sql = "SELECT  registration.email_id,registration.given_name,passport_details.passport_number
+        FROM registration,passport_details
+        WHERE registration.police_enquiry='not requested'";
 $result = mysqli_query($con, $sql);
 
 ?>
@@ -17,8 +17,8 @@ $result = mysqli_query($con, $sql);
 <table id="example" class="display nowrap" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>id</th>
-                <th>given_name</th>
+                <th>Email id</th>
+                <th>Given Name</th>
                 <TH>Passport No.</TH>
             </tr>
         </thead>
@@ -30,9 +30,9 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
-        echo "<td>" .$row["id"] . "</td>";
-        echo "<td> <a href='details.php?id=".$row['id']."'>" . $row["given_name"]. "</a></td>";
-        echo "<td>".$row["passport_no"]."</td>";
+        echo "<td> <a href='chart.php?email_id=".$row['email_id']."'>" .$row["email_id"] . "</td>";
+        echo "<td> " . $row["given_name"]. "</a></td>";
+        echo "<td>".$row["passport_number"]."</td>";
         echo "</tr>";
     }
     echo "</table>";
