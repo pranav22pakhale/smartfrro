@@ -79,7 +79,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>S</b>F</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Smart</b>Frro</span>
+      <span class="logo-lg"><b>Smart</b>Police</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -363,7 +363,7 @@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box" onClick="window.location.href='siddhi_police_dashboard_tables/police_done.php';"style="cursor: pointer;">
-            <span class="info-box-icon bg-red"><img src="images/check-mark-button.png"></img></span>
+            <span class="info-box-icon bg-red"><img src="images/check-mark.png"></img></span>
 
             <div class="info-box-content">
               <span class="info-box-text">ENQUIRED</span>
