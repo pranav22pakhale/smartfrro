@@ -29,7 +29,7 @@ if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
         echo "<td>" .$row["given_name"] . "</td>";
-        echo "<td> <a href='details.php?id="."'>" . $row["email_id"]. "</a></td>";
+        echo "<td>  <a href='../Profile/chart.php?id=".$row["email_id"]."'>". $row["email_id"]. "</a></td>";
         echo "<td>".$row["passport_number"]."</td>";
         echo "</tr>";
     }

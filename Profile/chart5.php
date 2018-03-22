@@ -44,31 +44,29 @@ session_start();
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
-                <li><a href="#">BACK</a></li>
+                <li><a href="chart4.php">BACK</a></li>
 				
             </ul>
         
 		</nav>
-		<?php
-	$servername = "localhost";
-$username1 = "root";
-$password = "";
-$dbname = "frro";
+		<?php session_start();
+	define('mysql_host','localhost');
+define('mysql_user','root');
+define('mysql_pwd','');
 
-// Create connection
-$conn = new mysqli($servername, $username1, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+$conn = mysqli_connect(mysql_host,mysql_user,mysql_pwd) or die('Can not connect to database..try again');
+mysqli_select_db($conn,'frro') or die(mysqli_error($conn));
+$email_id=$_SESSION["email_id"];
 
-$sql = "SELECT profile_pic FROM registration WHERE email_id='ross.taylor@gmail.com' ";
-$result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-	
-	while($row = $result->fetch_assoc()) {
-	
+$sql = "SELECT profile_pic FROM registration WHERE email_id='".$email_id."'";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+  
 		
 	
 	?>

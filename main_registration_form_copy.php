@@ -13,12 +13,40 @@
 </head>
     
 <script type="text/javascript">
-    function clk1(inputfield){
-        if(inputfield.value.length==0)
+    function clk(){
+        var inputfield1 = document.getElementById("surname");
+        if(inputfield1.value.length==0)
         {
             alert("enter surname");
+            inputfield1.focus();
+            return false;
+
+        }
+        var inputfield2 = document.getElementById("gname");
+        if(inputfield2.value.length==0)
+        {
+            alert("enter given name");
             return false;
         }
+        var inputfield3 = document.getElementById("fname");
+        if(inputfield3.value.length==0)
+        {
+            alert("enter given name");
+            return false;
+        }
+        var inputfield4 = document.getElementById("mname");
+        if(inputfield4.value.length==0)
+        {
+            alert("enter given name");
+            return false;
+        }
+        var inputfield5 = document.getElementById("sname");
+        if(inputfield5.value.length==0)
+        {
+            alert("enter given name");
+            return false;
+        }
+
         return true;
     }
 
@@ -68,14 +96,14 @@
             <fieldset>
                 <h2 class="fs-title">Personal Details</h2>
                 <h3 class="fs-subtitle">This is step 1</h3>
-                <input type="text" name="surname" placeholder="Surname"  class="form-control" onblur="clk1(this);" />
-                <input type="text" name="given_name" placeholder="Given Name"  onblur="clk(this);" />
-                <input type="text" name="father_name" placeholder="Father's Name"  onblur="clk(this);" />
-                <input type="text" name="mother_name" placeholder="Mother's Name"  />
-                <input type="text" name="spouse_name" placeholder="Spouse's Name"  />
-                <input type="text" name="religion" placeholder="Religion" />
-                <input type="text" name="purpose" placeholder="Purpose" />
-                <input type="button" name="next" class="next action-button" value="Next" />
+                <input type="text" name="surname" placeholder="Surname"  class="form-control" id="surname" />
+                <input type="text" name="given_name" placeholder="Given Name"  id="gname" />
+                <input type="text" name="father_name" placeholder="Father's Name" id="fname" />
+                <input type="text" name="mother_name" placeholder="Mother's Name"  id="mname"/>
+                <input type="text" name="spouse_name" placeholder="Spouse's Name" id="sname" />
+                <input type="text" name="religion" placeholder="Religion" id="religion"/>
+                <input type="text" name="purpose" placeholder="Purpose" id="purpose" />
+                <input type="button" name="next" class="next action-button" value="Next" onclick="clk();"/>
             </fieldset>
 
             <fieldset>
