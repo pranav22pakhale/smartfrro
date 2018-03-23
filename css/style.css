@@ -205,3 +205,20 @@ textarea {
   margin-top: -20px;
   text-align: right;
 }
+
+#footer {
+    background: url(images/footer-bg.jpg) repeat-x left top #fff;
+        background-color: rgb(255, 255, 255);
+        background-image: url("images/footer-bg.jpg");
+        background-repeat: repeat-x;
+        background-attachment: scroll;
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-position-x: left;
+        background-position-y: top;
+        background-size: auto auto;
+    overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    margin-top: 30px;
+}
