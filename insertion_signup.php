@@ -1,3 +1,4 @@
+
 <?php
 	session_start();
 	require_once 'database_connection.php';
@@ -81,6 +82,6 @@
 	$headers[] = 'Bcc: smartfrro@gmail.com';
 
 	mail($to,$subject,$message,implode("\r\n", $headers));
-	//header("Location:hashverify.php");
+	header("Location:email_sent.php");
 
 ?>
