@@ -19,7 +19,7 @@ $emailid=$_SESSION['emailid'];
 $result = mysqli_query($conn,$sql);
 
 if(mysqli_num_rows($result)){
-	header("Location:user_profile.php");
+	header("Location:Profile/user_profile.php");
 
 }
 else{

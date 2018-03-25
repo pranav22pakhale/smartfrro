@@ -104,6 +104,7 @@
 	}
 	if(isset($_POST['date_of_issue']))
 	{
+	
 		$date_of_issue=$_POST['date_of_issue'];
 	}
 	if(isset($_POST['pexpiry_date']))
@@ -251,4 +252,8 @@ if ($uploadOk == 0) {
     $result = mysqli_query($con,$sql);
 
   	//header("Location:thankyou.php");
+
+    header("Location:eduction.php");
+
+
 ?>

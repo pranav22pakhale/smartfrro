@@ -63,6 +63,7 @@ mysqli_select_db($conn,'frro') or die(mysqli_error($conn));
 // Check connection
 
 $emailid=$_SESSION['emailid'];
+//$_SESSION['username'] = $emailid;
 
 	//$sql = "UPDATE registration SET registration.police_enquiry= WHERE email_id='ross.taylor@gmail.com' ";
  $sql ="Select * from registration where email_id='".$emailid."'";
@@ -93,7 +94,7 @@ if ($result->num_rows > 0) {
                         <a href="chart3.php" > Edit Details </a>
                     </li>
                     <li>
-                        <a href="chart3.php" > Provide Location </a>
+                        <a href="user_location_front.php" > Provide Location </a>
                     </li>
                     
                                 
