@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 	
 define('mysql_host','localhost');
@@ -13,9 +14,13 @@ mysqli_select_db($conn,'frro') or die(mysqli_error($conn));
 // Check connection
 
 
-	
- $sql = "update registration set verification ='verified' where email_id='ross.taylor@gmail.com'"; 
+	$email_id=$_SESSION["email_id"];
+
+ $sql ="update registration set verification ='verified' where email_id='" .$email_id."'"; 
+echo $sql;
 $result = $conn->query($sql);
 
-header("Location:file-name.php");
+header("Location:../Dashboard_frro.php");
+
+
 ?>

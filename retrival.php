@@ -11,6 +11,7 @@
 				echo "id: " . $row["Name"]. " - Name: " . $row["Password"]. "<br>"; 
 		    }
 	} else {
+		
 		    echo "0 results";
 		}
 

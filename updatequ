@@ -1,0 +1,7 @@
+<?php
+
+   require_once 'database_connection.php';
+
+   $sql = "update formof set phone=1 where surname = 'a' ";
+
+?>
