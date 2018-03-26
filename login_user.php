@@ -102,7 +102,7 @@ body{
 						<!-- Button --> 
 							<div class="col-sm-12 controls"> 
 								<!--a id="btn-login" href="#" class="btn btn-block btn-success">Login </a--> 
-								<button type="submit">login</button>
+								<center><button type="submit">login</button></center>
 							</div> 
 						</div> 
 						<div class="form-group"> 
