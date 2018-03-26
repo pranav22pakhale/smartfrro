@@ -11,6 +11,20 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </head>
+    
+<script type="text/javascript">
+    function clk1(inputfield){
+        if(inputfield.value.length==0)
+        {
+            alert("enter surname");
+            return false;
+        }
+        return true;
+    }
+
+
+</script>
+
 <body>
 <!--div class="container">
   <h1>My First Bootstrap Page</h1>
@@ -41,7 +55,7 @@
 
 <section style="margin-top: 50px;">
     <div  class="container"> 
-        <form action="insertion_reg.php" id="msform" method="POST" enctype="multipart/form-data">
+        <form action="Profile/insertion_reg.php" id="msform" method="POST" enctype="multipart/form-data">
 
             <ul id="progressbar">
                 <li class="active">Personal Detail Page 1</li>
@@ -54,9 +68,9 @@
             <fieldset>
                 <h2 class="fs-title">Personal Details</h2>
                 <h3 class="fs-subtitle">This is step 1</h3>
-                <input type="text" name="surname" placeholder="Surname"  class="form-control"/>
-                <input type="text" name="given_name" placeholder="Given Name"  />
-                <input type="text" name="father_name" placeholder="Father's Name"  />
+                <input type="text" name="surname" placeholder="Surname"  class="form-control" onblur="clk1(this);" />
+                <input type="text" name="given_name" placeholder="Given Name"  onblur="clk(this);" />
+                <input type="text" name="father_name" placeholder="Father's Name"  onblur="clk(this);" />
                 <input type="text" name="mother_name" placeholder="Mother's Name"  />
                 <input type="text" name="spouse_name" placeholder="Spouse's Name"  />
                 <input type="text" name="religion" placeholder="Religion" />

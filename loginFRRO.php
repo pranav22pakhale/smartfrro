@@ -23,7 +23,7 @@
          <div id="login">   
           <h1>Police</h1>
           
-          <form action="index.php" method="post" autocomplete="off">
+          <form action="login_validatePolice.php" method="POST" autocomplete="off">
           
             <div class="field-wrap">
             <label>
@@ -49,7 +49,7 @@
         <div id="signup">   
           <h1>FRRO</h1>
           
-          <form action="login_validate.php" method="post" autocomplete="off">
+          <form action="login_validateFRRO.php" method="POST" autocomplete="off">
           
         
 

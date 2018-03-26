@@ -104,6 +104,7 @@
 	}
 	if(isset($_POST['date_of_issue']))
 	{
+	
 		$date_of_issue=$_POST['date_of_issue'];
 	}
 	if(isset($_POST['pexpiry_date']))
@@ -232,7 +233,7 @@ if ($uploadOk == 0) {
 
 
 
-    $sql = "insert into registration (surname,given_name,sex,father_name,mother_name,spouse_name,dob,religion,purpose,present_nationality,previous_nationality,indian_origin,profile_pic,document,email_id,verification,police_enquiry) values ('$surname','$given_name','male','$father_name','$mother_name','$spouse_name','$dob','$religion','$purpose','$pre_nationality','$prev_nationality','$origin','$target_file','$target_file1','$email_id','yes','yes')";
+    $sql = "insert into registration (surname,given_name,sex,father_name,mother_name,spouse_name,dob,religion,purpose,present_nationality,previous_nationality,indian_origin,profile_pic,document,email_id,verification) values ('$surname','$given_name','male','$father_name','$mother_name','$spouse_name','$dob','$religion','$purpose','$pre_nationality','$prev_nationality','$origin','$target_file','$target_file1','$email_id','unverified')";
 
 
     $result = mysqli_query($con,$sql);
@@ -249,4 +250,10 @@ if ($uploadOk == 0) {
     $sql = "insert into visa_details (visa_number,country_of_issue,place_of_issue,date_of_issue,expiry_date,visa_type,visa_subtype,email_id) values ('$visa_number','$vcountry_of_issue','$vplace_of_issue','$vdate_of_issue','$vexpiry_date','$visa_type','$vsub','$email_id')";
 
     $result = mysqli_query($con,$sql);
+
+  	//header("Location:thankyou.php");
+
+    header("Location:eduction.php");
+
+
 ?>

@@ -1,6 +1,5 @@
 <?php
 session_start();
-	
 define('mysql_host','localhost');
 define('mysql_user','root');
 define('mysql_pwd','');
@@ -12,15 +11,21 @@ mysqli_select_db($conn,'frro') or die(mysqli_error($conn));
 // Create connection
 // Check connection
 
-echo  $_POST["status"];
+$emailid=$_SESSION['emailid'];
 
 	//$sql = "UPDATE registration SET registration.police_enquiry= WHERE email_id='ross.taylor@gmail.com' ";
+ $sql ="Select email_id from registration where email_id='".$emailid."'";
 
-$sql ="update registration set verification ='rejected' where email_id='ross.taylor@gmail.com'"; 
+$result = mysqli_query($conn,$sql);
 
+if(mysqli_num_rows($result)){
+	header("Location:Profile/user_profile.php");
 
-$result = $conn->query($sql);
+}
+else{
+	header("Location:main_registration_form.php");
 
-?>
+}
 
-
+	
+	?>

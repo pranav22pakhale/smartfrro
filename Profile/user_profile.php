@@ -42,7 +42,7 @@ require_once 'head.php';
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
-                <li><a href="../Dashboard_frro.php">BACK</a></li>
+                <li><a href="login_user.php">Logout</a></li>
 				
             </ul>
         
@@ -50,24 +50,29 @@ require_once 'head.php';
 		</nav>
 		
 		<?php
-    session_start();
-    define('mysql_host','localhost');
+	session_start();
+define('mysql_host','localhost');
 define('mysql_user','root');
 define('mysql_pwd','');
 
 $conn = mysqli_connect(mysql_host,mysql_user,mysql_pwd) or die('Can not connect to database..try again');
 mysqli_select_db($conn,'frro') or die(mysqli_error($conn));
-$email_id=$_GET["id"];
-$_SESSION["email_id"]=$email_id;
-
-$sql = "SELECT profile_pic FROM registration WHERE email_id='".$email_id."'";
-$result = mysqli_query($conn, $sql);
 
 
-if (mysqli_num_rows($result) > 0) {
+// Create connection
+// Check connection
 
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
+$emailid=$_SESSION['emailid'];
+//$_SESSION['username'] = $emailid;
+
+	//$sql = "UPDATE registration SET registration.police_enquiry= WHERE email_id='ross.taylor@gmail.com' ";
+ $sql ="Select * from registration where email_id='".$emailid."'";
+
+$result = mysqli_query($conn,$sql);
+
+if ($result->num_rows > 0) {
+	
+	while($row = $result->fetch_assoc()) {
 	
 		
 	
@@ -76,23 +81,20 @@ if (mysqli_num_rows($result) > 0) {
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
 			<div class="outter" align="center"><img src='<?php echo $row['profile_pic']; ?>' class="image-circle"/></div>
-		<?php }}  ?>		
+	
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="#" class="active-menu"> Personal Details</a>
+                        <a href="#" class="active-menu"> Registration Details</a>
                     </li>
                     <li>
-                        <a href="chart2.php">Passport Details</a>
+                        <a href="user_profile_purpose_details.php">Purpose Details</a>
                     </li>
 					<li>
-                        <a href="chart3.php" > Address Details </a>
+                        <a href="chart3.php" > Edit Details </a>
                     </li>
                     <li>
-                        <a href="chart4.php" > Document Details </a>
-                    </li>
-                    <li>
-                        <a href="chart5.php" > Status </a>
+                        <a href="user_location_front.php" > Provide Location </a>
                     </li>
                     
                                 
@@ -101,11 +103,14 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
         </nav>
+
+	
+	
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
 		  <div class="header"> 
                         <h1 class="page-header">
-                             Charts <small>Show up your stats</small>
+                             Hello <?php echo $row['given_name'];  ?>
                         </h1>
 						 
 									
@@ -124,19 +129,6 @@ if (mysqli_num_rows($result) > 0) {
                         <div class="panel-body">
                             <table class="table table-hover ">
     
-	<?php
-
-$sql = "SELECT* FROM registration WHERE email_id='".$email_id."'";
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($result) > 0) {
-
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-	
-		
-	
-	?>
 	
 	
       

@@ -2,8 +2,6 @@
 
 require_once 'head.php';
 
-session_start();
-
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,7 +17,7 @@ session_start();
      <!-- Google Fonts-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
    <style type="text/css">
-      .image-circle{
+   .image-circle{
     border-radius: 50%;
     width: 175px;
     height: 175px;
@@ -44,57 +42,61 @@ session_start();
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
-                <li><a href="chart4.php">BACK</a></li>
+                <li><a href="login_user.php">Logout</a></li>
 				
             </ul>
-        
+   
+		
 		</nav>
-		<?php session_start();
-	define('mysql_host','localhost');
+		<?php
+	session_start();
+define('mysql_host','localhost');
 define('mysql_user','root');
 define('mysql_pwd','');
 
 $conn = mysqli_connect(mysql_host,mysql_user,mysql_pwd) or die('Can not connect to database..try again');
 mysqli_select_db($conn,'frro') or die(mysqli_error($conn));
-$email_id=$_SESSION["email_id"];
 
 
-$sql = "SELECT profile_pic FROM registration WHERE email_id='".$email_id."'";
-$result = mysqli_query($conn, $sql);
+// Create connection
+// Check connection
 
-if (mysqli_num_rows($result) > 0) {
+$emailid=$_SESSION['emailid'];
 
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-  
+	//$sql = "UPDATE registration SET registration.police_enquiry= WHERE email_id='ross.taylor@gmail.com' ";
+ $sql ="Select profile_pic from registration where email_id='".$emailid."'";
+
+$result = mysqli_query($conn,$sql);
+
+if ($result->num_rows > 0) {
+	
+	while($row = $result->fetch_assoc()) {
+	
 		
 	
 	?>
+	
         <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
-                <div class="outter" align="center"><img src='<?php echo $row['profile_pic']; ?>' class="image-circle"/></div>
-				
-<?php }}  ?>		
-				<ul class="nav" id="main-menu">
-                    
+			<div class="outter" align="center"><img src='<?php echo $row['profile_pic']; ?>' class="image-circle"/></div>
+<?php }} ?>			
+                <ul class="nav" id="main-menu">
+
                     <li>
-                        <a href="chart.php"> Personal Details</a>
+                        <a href="user_profile.php" > Registration Details</a>
                     </li>
                     <li>
-                        <a href="chart2.php" >Passport Details</a>
+                        <a href="user_profile_purpose_details.php" class="active-menu">Purpose Details</a>
                     </li>
 					<li>
-                        <a href="chart3.php" > Address Details </a>
-                    </li>
-                    
-                      <li>
-                        <a href="chart4.php"  > Document Details </a>
+                        <a href="chart3.php" > Edit Details </a>
                     </li>
                     <li>
-                        <a href="#" class="active-menu" > Status </a>
+                        <a href="chart3.php" > Provide Location </a>
                     </li>
-                              
+                    
+                                
                 </ul>
 
             </div>
@@ -110,25 +112,75 @@ if (mysqli_num_rows($result) > 0) {
 									
 		</div>
             <div id="page-inner" > 
-              <div class="col-md-6 col-sm-12 col-xs-12">                     
+             
+                <div  > 
+                    
+                      
+                  <div class="col-md-6 col-sm-12 col-xs-12">                     
+                    <div class="panel panel-default" >
                         <!--div class="panel-heading">
                             Bar Chart
                         </div-->
-						<form action="verification_action_verified.php" method="POST">
-					<button type="submit" class="btn btn-success btn-lg" > Verified </button>
-			</form>
-			 <br>
-	         <br>
-			 <form action="verification_action_rejected.php" method="post">
-	  <button type="submit" class="btn  btn-danger btn-lg" > Rejected </button>
-	  </form>
+						
+                        <div class="panel-body">
+                            <table class="table table-hover ">
+    
+	<?php
+	
+
+$sql = "SELECT* FROM passport_details WHERE email_id='".$emailid."'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+	
+	while($row = $result->fetch_assoc()) {
+	
+		
+	
+	?>
+	
+	
+      
+    
+    <tbody>
+      <tr>
+        <td>Passport Number</td>
+        <td><?php echo $row['passport_number'];  ?></td>
+        
+      </tr>
+      <tr>
+        <td>Country of Issue</td>
+        <td><?php echo $row['country_of_issue'];  ?></td>
+        
+      </tr>
+      <tr>
+        <td>Place of Issue</td>
+        <td><?php echo $row['place_of_issue'];  ?></td>
+       
+      </tr>
+	  <tr>
+        <td>Date of Issue</td>
+        <td><?php echo $row['date_of_issue'];  ?></td>
+       
+      </tr>
+	  <tr>
+        <td>Expiry Date</td>
+        <td><?php echo $row['expiry_date'];  ?></td>
+       
+      </tr>
+	                
 	  
-	  <br><br>
-	  <form action="verification_action_police.php" method="post">
-      <button class="btn btn-info btn-lg" type="submit" >Request for Police Verification</button>
-      </form>    
-		  
-		  </div> 
+    </tbody>
+  
+  
+<?php }}else echo "Error" ?>
+	</table>
+                        </div>
+					
+                    </div>            
+                </div>
+                               
+                </div> 
                 
                 
            </div>
@@ -154,6 +206,6 @@ if (mysqli_num_rows($result) > 0) {
       <!-- Custom Js -->
     <script src="assets/js/custom-scripts.js"></script>
     
-	   
+   
 </body>
 </html>

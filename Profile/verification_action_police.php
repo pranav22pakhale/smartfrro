@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 	
 define('mysql_host','localhost');
 define('mysql_user','root');
@@ -11,12 +11,13 @@ mysqli_select_db($conn,'frro') or die(mysqli_error($conn));
 
 // Create connection
 // Check connection
+$email_id=$_SESSION["email_id"];
 
 
 	//$sql = "UPDATE registration SET registration.police_enquiry= WHERE email_id='ross.taylor@gmail.com' ";
- $sql ="update registration set police_enquiry='requested' where email_id='ross.taylor@gmail.com'";
+$sql ="update registration set verification ='requested' where email_id='" .$email_id."'"; 
 
 $result = $conn->query($sql);
 
-header("Location:file-name.php");
+header("Location:../Dashboard_frro.php");
 ?>
