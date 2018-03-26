@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 	
 define('mysql_host','localhost');
 define('mysql_user','root');
