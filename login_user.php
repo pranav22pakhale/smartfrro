@@ -12,9 +12,13 @@
 	<link href="custom.css" rel='stylesheet' type='text/css'>
 	<link href="assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="assets/jquery/dist/jquery.min.js"></script>
+    <!--script type="text/javascript" src="assets/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="jquery.min.js"></script>
+	<script src="jquery.min.js"></script-->
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
 
@@ -35,15 +39,17 @@ body{
   </style>
 </head>
 <body>
-<nav class="navbar" style="background-color: #81C784">
-  <!--<a class="navbar-brand" href="#">
-    <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    Bootstrap
-  </a>-->
+
+<header>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img src="images/got-logo.png" class="navbar-brand img-responsive rounded" style="height: 125px;width:125px;margin-left: 90px"></a>
+   <h1 style="color: white;"><b>e-Smart</b>Frro</h1> 
+      <a href="logout.php"><button class="btn btn-outline-success my-2 my-sm-0 btn-lg" type="submit" style="margin-left: 880px" >LOGOUT</button></a>
   
-  <p class="ex1" align="center"><font size="12">Online e-service Portal FRRO</font></p>
+</nav>
+</header> 
   
-  </nav>
+  
 <div class="container">
 	<div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 loginbox"> 
 		<div class="panel panel-info" > 

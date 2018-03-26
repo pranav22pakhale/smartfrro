@@ -397,7 +397,7 @@ require_once 'head.php';
               
               <div class="form-group col-sm-6">
                 <label for="date_of_birth">Date of Birth<span class="mandfield">*</span></label>
-                <input type="text" name="date_of_birth" id="date_of_birth" class="form-control" onkeyup="chkDatechars(this);insertslash(this,document.applicationform.dob_dateformat.value);" onblur="chkDOB();" onkeydown="if (event.keyCode == 8) event.keyCode=37+46; if(event.keyCode==13) event.keyCode=9;" maxlength="10" size="10" autocomplete="OFF" placeholder="DOB(Strictly as in your passport)" value=""> 
+                <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" onkeyup="chkDatechars(this);insertslash(this,document.applicationform.dob_dateformat.value);" onblur="chkDOB();" onkeydown="if (event.keyCode == 8) event.keyCode=37+46; if(event.keyCode==13) event.keyCode=9;" maxlength="10" size="10" autocomplete="OFF" placeholder="DOB(Strictly as in your passport)" value=""> 
               </div>
               
               <div class="form-group col-sm-6">
