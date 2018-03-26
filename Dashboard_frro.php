@@ -289,14 +289,66 @@
                         ?>
                          <small>profiles</small></span>
             </div>
+
             <!-- /.info-box-content -->
           </div>
+
           <!-- /.info-box -->
         </div>
         <!-- /.col -->
       </div>
       <!-- /.row -->
+        <div class="row">
+<div class="col-md-3 col-sm-6 col-xs-6">
+          <div class="info-box" onClick="window.location.href='frro_dashboard_tables/frro_rejected.php';"style="cursor: pointer;">
+            <span class="info-box-icon bg-lime" ><img class="ion ion-ios-people-outline" src="images/15day.png"></img></span>
 
+            <div class="info-box-content">
+              <span class="info-box-text">Expiry 15 days</span>
+              <span class="info-box-number"> <?php
+
+                    require_once 'database_connection.php';
+                      $sql='SELECT id FROM registration where verification="rejected"';
+                      $result = mysqli_query($con, $sql);
+                      $row_count=mysqli_num_rows($result);
+                      // output data of each row
+                     
+                          echo "$row_count";
+                        ?>
+                         <small>profiles</small></span>
+            </div>
+
+
+            <!-- /.info-box-content -->
+       	 </div>
+
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+          <div class="info-box" onClick="window.location.href='frro_dashboard_tables/frro_rejected.php';"style="cursor: pointer;">
+            <span class="info-box-icon bg-purple" ><img class="ion ion-ios-people-outline" src="images/5day.png"></img></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">5 day location update</span>
+              <span class="info-box-number"> <?php
+
+                    require_once 'database_connection.php';
+                      $sql='SELECT id FROM registration where verification="rejected"';
+                      $result = mysqli_query($con, $sql);
+                      $row_count=mysqli_num_rows($result);
+                      // output data of each row
+                     
+                          echo "$row_count";
+                        ?>
+                         <small>profiles</small></span>
+            </div>
+
+
+            <!-- /.info-box-content -->
+       	 </div>
+
+            </div>
+          <!-- /.info-box -->
+        </div>
       <div class="row">
         <div class="col-md-12">
           <div class="box">
