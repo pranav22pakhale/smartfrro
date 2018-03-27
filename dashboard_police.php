@@ -79,7 +79,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>S</b>F</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Smart</b>Police</span>
+      <span class="logo-lg"><b><font size="5" color="white">Smart</b>Police</font></span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -419,13 +419,15 @@
             <span class="info-box-icon bg-aqua"><img src="images/guard.png"></img></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Total Profiles
+              <span class="info-box-text">PROFILES CURRENT<br>LOCATION
 			  </span>
               <span class="info-box-number"><small>
 			  <?php
 
                     require_once 'db_connection.php';
-                      $sql='SELECT * FROM police';
+                     $sql = "SELECT *,MAX(date_time)
+        FROM policedb.police,frro.live_location
+		WHERE policedb.police.email_id=frro.live_location.email_id";
                       $result = mysqli_query($con, $sql);
                       $row_count=mysqli_num_rows($result);
                       // output data of each row
