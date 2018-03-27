@@ -41,4 +41,5 @@ mysqli_query($con2, $sql2);
 $i--;
 }
 echo "very nice";
+header("Location: ../Dashboard_frro.php");
 ?>
