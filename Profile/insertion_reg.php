@@ -164,10 +164,6 @@
             $uploadOk = 0;
         }
         // Check file size
-        if ($_FILES["fileToUpload"]["size"] > 500000) {
-            echo "Sorry, your file is too large.";
-            $uploadOk = 0;
-        }
         // Allow certain file formats
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
         && $imageFileType != "gif" ) {
@@ -186,9 +182,9 @@
             }
         }
 
-
+$t=time();
         $target_dir = "uploads1/";
-$target_file1 = $target_dir . basename($_FILES["fileToUpload1"]["name"]);
+$target_file1 = $target_dir .$t. basename($_FILES["fileToUpload1"]["name"]);
 $uploadOk = 1;
 $FileType = strtolower(pathinfo($target_file1,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
@@ -208,10 +204,6 @@ if (file_exists($target_file1)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["fileToUpload1"]["size"] > 500000) {
-    echo "Sorry, your file is too large.";
-    $uploadOk = 0;
-}
 // Allow certain file formats
 if($FileType != "pdf" ) {
     echo "Sorry, only pdf files are allowed.";
@@ -253,7 +245,7 @@ if ($uploadOk == 0) {
 
   	//header("Location:thankyou.php");
 
-    header("Location:eduction.php");
+    header("Location:education.php");
 
 
 ?>

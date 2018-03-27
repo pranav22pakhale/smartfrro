@@ -34,7 +34,7 @@ function getaddress($lat,$lng)
      }
   }
 $address= getaddress($latitude,$longitude);
-
+/*echo $latitude;
   if($address)
   {
     echo $address;
@@ -42,8 +42,8 @@ $address= getaddress($latitude,$longitude);
   else
   {
     echo "Not found";
-  }
-
+  }*/
+  //echo $username;
 	$sql = "insert into live_location(email_id,address) values ('$username','$address')"  ;
 	$result = mysqli_query($con,$sql);
 

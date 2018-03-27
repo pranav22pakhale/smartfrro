@@ -1,7 +1,7 @@
 <?php
 session_start();
-//require_once 'database_connection.php';
-	require_once 'update.php';
+require_once 'database_connection.php';
+	//require_once 'update.php';
 /*define('mysql_host','localhost');
 define('mysql_user','root');
 define('mysql_pwd','');
@@ -16,9 +16,10 @@ echo '<br>';
 echo 'hash is'.$hash;
 if($genhash == $hash)
 {
-	$sql = "UPDATE 'sign_up' SET 'verification'='yes' WHERE 'email_id' = $_SESSION["uname"]";
+	$uname =$_SESSION["uname"];
+	$sql = "UPDATE sign_up SET verification=1 WHERE email_id = '$uname' ";
 	$result = mysqli_query($con, $sql);
-	
+	 
 
 	/*$sql = "select * from sign_up";
 	$result = mysqli_query($con,$sql);
@@ -26,10 +27,9 @@ if($genhash == $hash)
 				echo "id: " . $row["email_id"]. " - status: " . $row["verification"]. "<br>"; 
 		    }*/
 	
-
-	echo ' email verified ';
+	header("Location:login_user.php");
+	
 }
 else{
-	echo 'not verified';
-}
+	}
 ?>

@@ -34,7 +34,7 @@ require_once 'head.php';
 
    </style>
 </head>
-<body>
+<body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
@@ -42,13 +42,16 @@ require_once 'head.php';
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
-                <li><a href="login_user.php">Logout</a></li>
+                <li><a href="/smartfrro/Logout.php">Logout</a></li>
 				
             </ul>
         
 		
 		</nav>
 		
+
+
+
 		<?php
 	session_start();
 define('mysql_host','localhost');
@@ -232,6 +235,20 @@ if ($result->num_rows > 0) {
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
+    <script language="javaScript" type="text/javascript">
+ function noBack(){window.history.forward()}
+            noBack();
+            window.onload=noBack;
+            window.onpageshow=function(evt){if(evt.persisted)noBack()}
+            window.onunload=function(){void(0)}
+            
+            function burstCache() {
+       if (!navigator.onLine) {
+           document.body.innerHTML = 'Loading...';
+       }
+   }
+</script>
+
     <script src="assets/js/jquery-1.10.2.js"></script>
       <!-- Bootstrap Js -->
     <script src="assets/js/bootstrap.min.js"></script>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Smart Frro</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -33,6 +33,7 @@ margin-left:25%;
 
 </style>
 </head>
+
 <body>
 
 	<center>
@@ -41,7 +42,7 @@ margin-left:25%;
    		<h1 style="color: white; font-size: 50px; font-family: 'Titillium Web', sans-serif;">Thank you for Registration!</h1>
 
         <div class="alert alert-info">
-  			<strong style="font-size: 30px;">Welcome to Telangana !</strong>
+  			<strong style="font-size: 30px;">Verify Your Account !</strong>
 		</div>
 		
     </div>

@@ -43,9 +43,9 @@ require_once 'head.php';
 
 <script>
 
-    $(function(){
+    /*$(function(){
          $('input[type="date"]').datepicker();
-    });
+    });*/
     
     
     
@@ -300,16 +300,17 @@ require_once 'head.php';
 
 
 <style type="text/css">
+
     /* Add some padding on document's body to prevent the content
     to go underneath the header and footer */
     body{        
-        padding-top: 160px;
+        padding-top: 140px;
         padding-bottom: 15px;
     }
-    .container{
+
+    /*.container{
         width: 80%;
-        margin: 1 auto; /* Center the DIV horizontally */
-    }
+        margin: 1 auto; 
     .fixed-header, .fixed-footer{
         width: 100%;
         position: fixed;        
@@ -324,7 +325,7 @@ require_once 'head.php';
     .fixed-footer{
         bottom: 0;
     }    
-    /* Some more styles to beutify this example */
+    
     nav a{
         color: #fff;
         text-decoration: none;
@@ -332,26 +333,45 @@ require_once 'head.php';
         display: inline-block;
     }
 	 .container p{
-        line-height: 200px; /* Create scrollbar to test positioning */
+        line-height: 200px; 
     }
 	.mandfield{
 	    color: #f00;
-	}
+	}*/
     </style>
 </head>
 <body>
 <link rel="stylesheet" type="text/css" href="v_styles.css">
 <link rel="stylesheet" type="text/css" href="v_screen.css"> 
  
-    <div class="fixed-header">
+     <!--nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
+      <div class="navbar-header">
+      <div class="container">
+        <img src="images/got-logo.png" class="navbar-brand img-responsive rounded" class="navbar-brand img-responsive rounded" style="height: 100px;width:100px;margin-left: 90px"></a>
+        <h1 style="color: white;"><b>e-Smart</b>Frro</h1> 
+        <a href="#" class="btn btn-warning navbar-btn navbar-right">Download Now</a>
+      </div>
+    </div>
+  </nav>
+  <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
+    <!--div class="fixed-header">
         <div class="container">
-            <nav>
+           
+                <img src="images/got-logo.png" class="navbar-brand img-responsive rounded" style="height: 100px;width:100px;margin-left: 90px">
                 <a href><h1>e-FRRO Online Portal </h1></a>
                 
             </nav>
         </div>
-    </div>
-    <div class="container">
+        </div-->
+
+        <!--header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img src="images/got-logo.png" class="navbar-brand img-responsive rounded" style="height: 125px;width:125px;margin-left: 90px"></a>
+   <h1 style="color: white;"><b>e-Smart</b>Frro</h1> 
+      <a href="logout.php"><button class="btn btn-outline-success my-2 my-sm-0 btn-lg" type="submit" style="margin-left: 880px" >LOGOUT</button></a>
+  </nav>
+</header-->
+        <div class="container">
     	<div class="panel panel-default">
     <div class="panel-heading"><h1>Registration Form</h1></div>
     <div class="panel-body">
@@ -468,8 +488,8 @@ require_once 'head.php';
     </div>
   </div>
     </div>    
-    <div class="fixed-footer">
+    <!--div class="fixed-footer">
         <div class="container">Copyright &copy; 2016 Your Company</div>        
-    </div>
+    </div-->
 </body>
 </html>  

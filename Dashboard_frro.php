@@ -300,7 +300,7 @@
       <!-- /.row -->
         <div class="row">
 <div class="col-md-3 col-sm-6 col-xs-6">
-          <div class="info-box" onClick="window.location.href='frro_dashboard_tables/frro_rejected.php';"style="cursor: pointer;">
+          <div class="info-box" onClick="window.location.href='alert_mail/visa_expiry_mail.php';"style="cursor: pointer;">
             <span class="info-box-icon bg-lime" ><img class="ion ion-ios-people-outline" src="images/15day.png"></img></span>
 
             <div class="info-box-content">
@@ -308,12 +308,17 @@
               <span class="info-box-number"> <?php
 
                     require_once 'database_connection.php';
-                      $sql='SELECT id FROM registration where verification="rejected"';
+                      //$sql='SELECT id FROM registration where verification=""';
+                     //$sql = "SELECT COUNT(*) FROM live_location";
+                      //$sql = "select * from live_location";
+                    $sql="SELECT email_id, visa_number, expiry_date 
+    FROM visa_details
+    WHERE datediff(curdate(),expiry_date)=15 and datediff(curdate(),expiry_date)=11";
                       $result = mysqli_query($con, $sql);
                       $row_count=mysqli_num_rows($result);
                       // output data of each row
                      
-                          echo "$row_count";
+                          echo $row_count;
                         ?>
                          <small>profiles</small></span>
             </div>
@@ -324,7 +329,7 @@
 
             </div>
             <div class="col-md-3 col-sm-6 col-xs-6">
-          <div class="info-box" onClick="window.location.href='frro_dashboard_tables/frro_rejected.php';"style="cursor: pointer;">
+          <div class="info-box" onClick="window.location.href='alert_mail/5days_mail.php';"style="cursor: pointer;">
             <span class="info-box-icon bg-purple" ><img class="ion ion-ios-people-outline" src="images/5day.png"></img></span>
 
             <div class="info-box-content">
@@ -332,7 +337,9 @@
               <span class="info-box-number"> <?php
 
                     require_once 'database_connection.php';
-                      $sql='SELECT id FROM registration where verification="rejected"';
+                      $sql="SELECT email_id
+    FROM live_location
+    WHERE datediff(curdate(),date_time)>4";
                       $result = mysqli_query($con, $sql);
                       $row_count=mysqli_num_rows($result);
                       // output data of each row
