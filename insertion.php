@@ -1,4 +1,5 @@
 <?php
+
 	require_once 'database_connection.php';
 	if(isset($_POST['emailId']))
 	{

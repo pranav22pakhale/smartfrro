@@ -424,7 +424,7 @@ require_once 'head.php';
 
               
               
-			  <div class="form-group col-sm-6">
+			  <div class="form-group col-sm-12">
                <p style="color: #f00; margin-bottom:4px">Note: ALL (*) Fields are Mandatory</p>
               </div>
 			  <!-- <div class="form-group col-sm-6">
@@ -435,11 +435,15 @@ require_once 'head.php';
                 <label for="city">City</label>
                 <input type="text" name="city" id="city" class="form-control" size="43" maxlength="50" Autocomplete="OFF" onKeyUp="chkString(this);" placeholder="City" />
               </div> -->
-              
-              
-              <input name="captcha" type="text" id="captcha" class="form-control col-md-4 " size="43" maxlength="6" autocomplete="OFF" placeholder="Enter Captcha value" style="margin-bottom:15px;">  
-            
-          <div class="form-group text-center" style="float: left; width: 100%;">
+              <br>
+            <div class="row">
+            <div class="col-sm-4"></div>
+  <div class="col-sm-4"> <input name="captcha" type="text" id="captcha" class="form-control col-md-4 " size="43" maxlength="6" autocomplete="OFF" placeholder="Enter Captcha value" style="margin-bottom:15px;">  </div>
+  <div class="col-sm-4"></div>
+            </div>
+             
+      
+            <div class="form-group text-center" style="float: left; width: 100%;">
             <img src="create_image.php" alt="captcha" id="captcha_code">
              <i class="fa fa-refresh" onclick="window.location.reload();" style="cursor:pointer"></i>
           </div>
