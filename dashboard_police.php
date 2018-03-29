@@ -440,6 +440,31 @@
           </div>
           <!-- /.info-box -->
         </div>
+		</div>
+		<div class="row">
+		 <div class="col-md-3 col-sm-6 col-xs-6">
+	         	<div class="info-box" onClick="window.location.href='queue_functions/queue_police_insert.php';"style="cursor: pointer;">
+	            <span class="info-box-icon bg-green" ><img class="ion ion-ios-people-outline" src="images/send_pol.png"></img></span>
+		            <div class="info-box-content">
+		            <span class="info-box-text">Send to<br>FRRO</span>
+		              <span class="info-box-number">
+		              </span>
+		            </div>            <!-- /.info-box-content -->
+	       	    </div>
+				</div>
+				
+				<div class="col-md-3 col-sm-6 col-xs-6">
+	         	<div class="info-box" onClick="window.location.href='queue_functions/queue_police_retrieve.php';"style="cursor: pointer;">
+	            <span class="info-box-icon bg-blue" ><img class="ion ion-ios-people-outline" src="images/download.png"></img></span>
+		            <div class="info-box-content">
+		            <span class="info-box-text">Retrieve from<br>FRRO</span>
+		              <span class="info-box-number">
+		              </span>
+		            </div>            <!-- /.info-box-content -->
+	       	    </div>
+				</div>
+		
+		</div>
       <div class="row">
         <div class="col-md-12">
           <div class="box">

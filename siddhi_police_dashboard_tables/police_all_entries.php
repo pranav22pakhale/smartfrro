@@ -23,7 +23,7 @@ $result = mysqli_query($con, $sql);
 				<th>email_id</th>
                 
                 
-				<th>location_of_foreigner</th>
+				
 				
 				<th>police_enquiry</th>
 				<th>Address</th>
@@ -46,7 +46,7 @@ if (mysqli_num_rows($result) > 0) {
         
 				       
        
-		echo "<td>".$row["location_of_foreigner"]."</td>";
+		
 		
 		
 		echo "<td>".$row["police_enquiry"]."</td>";
