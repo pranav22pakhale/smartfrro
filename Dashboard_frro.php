@@ -329,7 +329,7 @@
 
             </div>
             <div class="col-md-3 col-sm-6 col-xs-6">
-<<<<<<< HEAD
+
           <div class="info-box" onClick="window.location.href='alert_mail/5days_mail.php';"style="cursor: pointer;">
             <span class="info-box-icon bg-purple" ><img class="ion ion-ios-people-outline" src="images/5day.png"></img></span>
 
@@ -349,6 +349,8 @@
                         ?>
                          <small>profiles</small></span>
             </div>
+          </div>
+        </div>
             <div class="col-md-3 col-sm-6 col-xs-6">
 	         	<div class="info-box" onClick="window.location.href='queue_functions/queue_frro_insert.php';"style="cursor: pointer;">
 	            <span class="info-box-icon bg-green" ><img class="ion ion-ios-people-outline" src="images/send_pol.png"></img></span>
@@ -365,7 +367,7 @@
 		            <span class="info-box-text">Send to<br>Education Department</span>
 		              <span class="info-box-number">
 		              </span>
-		            </div>            <!-- /.info-box-content -->
+		            </div>            <!-- /.info-box-cogintent -->
 	       	    </div>
             </div>
           <!-- /.info-box -->
