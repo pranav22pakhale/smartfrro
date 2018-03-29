@@ -308,19 +308,23 @@ require_once 'head.php';
         padding-bottom: 15px;
     }
 
-    /*.container{
+    .container{
         width: 80%;
-        margin: 1 auto; 
+        margin: 1 auto; }
+
     .fixed-header, .fixed-footer{
         width: 100%;
         position: fixed;        
-        background: #333;
+        background: #343a40;
         padding: 15px 0;
         color: #fff;
     }
     .fixed-header{
-		z-index:1000; 
+	 height: 100px;
+   padding: 3px 0;
+  	z-index:1000; 
         top: 0;
+      margin-top: -10px;
     }
     .fixed-footer{
         bottom: 0;
@@ -337,32 +341,22 @@ require_once 'head.php';
     }
 	.mandfield{
 	    color: #f00;
-	}*/
+	}
     </style>
 </head>
 <body>
 <link rel="stylesheet" type="text/css" href="v_styles.css">
 <link rel="stylesheet" type="text/css" href="v_screen.css"> 
  
-     <!--nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
-      <div class="navbar-header">
-      <div class="container">
-        <img src="images/got-logo.png" class="navbar-brand img-responsive rounded" class="navbar-brand img-responsive rounded" style="height: 100px;width:100px;margin-left: 90px"></a>
-        <h1 style="color: white;"><b>e-Smart</b>Frro</h1> 
-        <a href="#" class="btn btn-warning navbar-btn navbar-right">Download Now</a>
-      </div>
-    </div>
-  </nav>
-  <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
-    <!--div class="fixed-header">
+     <div class="fixed-header">
         <div class="container">
-           
-                <img src="images/got-logo.png" class="navbar-brand img-responsive rounded" style="height: 100px;width:100px;margin-left: 90px">
+           <nav>
+                    <img src="images/got-logo.png" height="79" width="79" alt="logo" />
                 <a href><h1>e-FRRO Online Portal </h1></a>
                 
             </nav>
         </div>
-        </div-->
+        </div>
 
         <!--header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -373,7 +367,9 @@ require_once 'head.php';
 </header-->
         <div class="container">
     	<div class="panel panel-default">
-    <div class="panel-heading"><h1>Registration Form</h1></div>
+    <div class="panel-heading"><h1>Registration Form  <a href="login_user.php" class="pull-right" style="font-size:25px">LOGIN</a></h1>
+	
+	</div>
     <div class="panel-body">
     <form action="insertion_signup.php"name="applicationform" id="eregistration_id" method="post" name="form1" >
               <div class="form-group col-sm-6">
@@ -404,9 +400,9 @@ require_once 'head.php';
                 <select name="dob_dateformat" id="dob_dateformat" class="form-control styled-select" onchange="document.applicationform.date_of_birth.value='';" onkeydown="if (event.keyCode == 8) event.keyCode=37+46; if(event.keyCode==13) event.keyCode=9;">
                 <option value="">Select...</option>
 											<option value="DY"> Date of birth in DD/MM/YYYY</option>
-											<option value="YY"> Year of birth in YYYY</option>
+											<!--option value="YY"> Year of birth in YYYY</option>
 											<option value="MY"> Month &amp; Year of birth in MM/YYYY</option>
-											<option value="AG"> Age in XXX years</option>
+											<option value="AG"> Age in XXX years</option-->
                 </select>
                 <span class="">
                     <span class=""></span>

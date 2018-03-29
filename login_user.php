@@ -24,7 +24,47 @@
 
 </script>
 <style type="text/css">
+    body{        
+        padding-top: 140px;
+        padding-bottom: 15px;
+    }
 
+    .container{
+        width: 80%;
+        margin: 1 auto; }
+
+    .fixed-header, .fixed-footer{
+        width: 100%;
+        position: fixed;        
+        background: #343a40;
+        padding: 15px 0;
+        color: #fff;
+    }
+    .fixed-header{
+	 height: 100px;
+   padding: 3px 0;
+  	z-index:1000; 
+        top: 0;
+      margin-top: -10px;
+    }
+    .fixed-footer{
+        bottom: 0;
+    }    
+    
+    nav a{
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 25px;
+        display: inline-block;
+    }
+	 .container p{
+        line-height: 200px; 
+    }
+	.mandfield{
+	    color: #f00;
+	}
+
+    
 .color
 {
 	color:#FF0000;
@@ -39,7 +79,15 @@ body{
   </style>
 </head>
 <body>
-
+<div class="fixed-header">
+        <div class="container">
+           <nav>
+                    <img src="images/got-logo.png" height="79" width="79" alt="logo" />
+                <a href><h1>e-FRRO Online Portal </h1></a>
+                
+            </nav>
+        </div>
+        </div>
 <!--header>
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <img src="images/got-logo.png" class="navbar-brand img-responsive rounded" style="height: 100px;width:100px;margin-left: 90px"></a>

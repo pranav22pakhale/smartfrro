@@ -245,7 +245,7 @@ if ($uploadOk == 0) {
 
   	//header("Location:thankyou.php");
 
-    header("Location:education.php");
+    header("Location:/smartfrro/education.php");
 
 
 ?>

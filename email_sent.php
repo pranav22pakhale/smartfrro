@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Smart Frro</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -46,6 +46,9 @@ margin-left:25%;
 			<div class="alert alert-danger" style="font-size: 25px;">
 	  			<strong style="font-size: 25px;"> Account is unverified, please confirm your email by clicking on the email link!</strong>
 			</div>
+
+      <div class="btn btn-warning btn-lg">
+        <a href="login_user.php">LOGIN</a>
     </div>
 </center>
 

@@ -84,8 +84,8 @@
             <fieldset>
                 <h2 class="fs-title">Personal Details</h2>
                 <h3 class="fs-subtitle">This is step 1</h3>
-                 <input type="text" name="surname" placeholder="Surname"  value="<?php echo $row["surname"];?>"  readonly />
-                <input type="text" name="given_name" placeholder="Given Name" value="<?php echo $row["given_name"];?>" readonly/ >
+                 <input type="text" name="surname" placeholder="Surname"  value="<?php echo ucfirst($row["surname"]);?>"  readonly />
+                <input type="text" name="given_name" placeholder="Given Name" value="<?php echo ucfirst($row["given_name"]);?>" readonly/ >
                 <input type="text" name="father_name" placeholder="Father's Name"  />
                 <input type="text" name="mother_name" placeholder="Mother's Name"  />
                 <input type="text" name="spouse_name" placeholder="Spouse's Name"  />

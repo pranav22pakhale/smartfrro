@@ -45,6 +45,9 @@ margin-left:25%;
   			<strong style="font-size: 30px;">Verify Your Account !</strong>
 		</div>
 		
+    <div class="btn btn-warning btn-lg">
+        <a href="login_user.php">LOGIN</a>
+    </div>
     </div>
 </center>
 
