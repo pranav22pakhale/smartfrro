@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Smart Frro</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -23,10 +23,11 @@ transform: translateY(20%);
 margin-left:25%;
 }
 
+
 .alert-info-alt { 
 	border-color: #B4E1E4;
 	background: #81c7e1;
-	color: #fff; 
+	
 }
 
 
@@ -37,18 +38,13 @@ margin-left:25%;
 	<center>
    	<div class="well well-lg">
 
-   		<h1 style="color: white; font-size: 50px; font-family: 'Titillium Web', sans-serif;">Thank you for Sign Up!</h1>
+   		<h1 style="color: white; font-size: 50px; font-family: 'Titillium Web', sans-serif;">Thank you for Registration!</h1>
 
-        <div class="alert alert-success">
-  			<strong style="font-size: 30px;">You have signed up successfully !</strong>
+        <div class="alert alert-info">
+  			<strong style="font-size: 30px;">Thank you</strong>
+        <h3> Your Location has been recorded</h3>
 		</div>
 		
-			<div class="alert alert-danger" style="font-size: 25px;">
-	  			<strong style="font-size: 25px;"> Account is unverified, please confirm your email by clicking on the email link!</strong>
-			</div>
-
-      <div class="btn btn-warning btn-lg">
-        <a href="login_user.php">LOGIN</a>
     </div>
 </center>
 

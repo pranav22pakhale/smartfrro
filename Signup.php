@@ -43,9 +43,9 @@ require_once 'head.php';
 
 <script>
 
-    $(function(){
+    /*$(function(){
          $('input[type="date"]').datepicker();
-    });
+    });*/
     
     
     
@@ -300,31 +300,36 @@ require_once 'head.php';
 
 
 <style type="text/css">
+
     /* Add some padding on document's body to prevent the content
     to go underneath the header and footer */
     body{        
-        padding-top: 160px;
+        padding-top: 140px;
         padding-bottom: 15px;
     }
+
     .container{
         width: 80%;
-        margin: 1 auto; /* Center the DIV horizontally */
-    }
+        margin: 1 auto; }
+
     .fixed-header, .fixed-footer{
         width: 100%;
         position: fixed;        
-        background: #333;
+        background: #343a40;
         padding: 15px 0;
         color: #fff;
     }
     .fixed-header{
-		z-index:1000; 
+	 height: 100px;
+   padding: 3px 0;
+  	z-index:1000; 
         top: 0;
+      margin-top: -10px;
     }
     .fixed-footer{
         bottom: 0;
     }    
-    /* Some more styles to beutify this example */
+    
     nav a{
         color: #fff;
         text-decoration: none;
@@ -332,7 +337,7 @@ require_once 'head.php';
         display: inline-block;
     }
 	 .container p{
-        line-height: 200px; /* Create scrollbar to test positioning */
+        line-height: 200px; 
     }
 	.mandfield{
 	    color: #f00;
@@ -343,17 +348,28 @@ require_once 'head.php';
 <link rel="stylesheet" type="text/css" href="v_styles.css">
 <link rel="stylesheet" type="text/css" href="v_screen.css"> 
  
-    <div class="fixed-header">
+     <div class="fixed-header">
         <div class="container">
-            <nav>
+           <nav>
+                    <img src="images/got-logo.png" height="79" width="79" alt="logo" />
                 <a href><h1>e-FRRO Online Portal </h1></a>
                 
             </nav>
         </div>
-    </div>
-    <div class="container">
+        </div>
+
+        <!--header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img src="images/got-logo.png" class="navbar-brand img-responsive rounded" style="height: 125px;width:125px;margin-left: 90px"></a>
+   <h1 style="color: white;"><b>e-Smart</b>Frro</h1> 
+      <a href="logout.php"><button class="btn btn-outline-success my-2 my-sm-0 btn-lg" type="submit" style="margin-left: 880px" >LOGOUT</button></a>
+  </nav>
+</header-->
+        <div class="container">
     	<div class="panel panel-default">
-    <div class="panel-heading"><h1>Registration Form</h1></div>
+    <div class="panel-heading"><h1>Registration Form  <a href="login_user.php" class="pull-right" style="font-size:25px">LOGIN</a></h1>
+	
+	</div>
     <div class="panel-body">
     <form action="insertion_signup.php"name="applicationform" id="eregistration_id" method="post" name="form1" >
               <div class="form-group col-sm-6">
@@ -384,9 +400,9 @@ require_once 'head.php';
                 <select name="dob_dateformat" id="dob_dateformat" class="form-control styled-select" onchange="document.applicationform.date_of_birth.value='';" onkeydown="if (event.keyCode == 8) event.keyCode=37+46; if(event.keyCode==13) event.keyCode=9;">
                 <option value="">Select...</option>
 											<option value="DY"> Date of birth in DD/MM/YYYY</option>
-											<option value="YY"> Year of birth in YYYY</option>
+											<!--option value="YY"> Year of birth in YYYY</option>
 											<option value="MY"> Month &amp; Year of birth in MM/YYYY</option>
-											<option value="AG"> Age in XXX years</option>
+											<option value="AG"> Age in XXX years</option-->
                 </select>
                 <span class="">
                     <span class=""></span>
@@ -397,7 +413,7 @@ require_once 'head.php';
               
               <div class="form-group col-sm-6">
                 <label for="date_of_birth">Date of Birth<span class="mandfield">*</span></label>
-                <input type="text" name="date_of_birth" id="date_of_birth" class="form-control" onkeyup="chkDatechars(this);insertslash(this,document.applicationform.dob_dateformat.value);" onblur="chkDOB();" onkeydown="if (event.keyCode == 8) event.keyCode=37+46; if(event.keyCode==13) event.keyCode=9;" maxlength="10" size="10" autocomplete="OFF" placeholder="DOB(Strictly as in your passport)" value=""> 
+                <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" onkeyup="chkDatechars(this);insertslash(this,document.applicationform.dob_dateformat.value);" onblur="chkDOB();" onkeydown="if (event.keyCode == 8) event.keyCode=37+46; if(event.keyCode==13) event.keyCode=9;" maxlength="10" size="10" autocomplete="OFF" placeholder="DOB(Strictly as in your passport)" value=""> 
               </div>
               
               <div class="form-group col-sm-6">
@@ -468,8 +484,8 @@ require_once 'head.php';
     </div>
   </div>
     </div>    
-    <div class="fixed-footer">
+    <!--div class="fixed-footer">
         <div class="container">Copyright &copy; 2016 Your Company</div>        
-    </div>
+    </div-->
 </body>
 </html>  
