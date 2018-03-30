@@ -269,11 +269,14 @@ $filename = '';
 if(isset($_FILES['fileToUpload']['tmp_name']) && file_exists($_FILES['fileToUpload']['tmp_name'])){
 	$filename = "Profile/uploads/".time().$_FILES['fileToUpload']['name'];
 move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $filename);
+$filename = "uploads/".time().$_FILES['fileToUpload']['name'];
 }
 $filename1 = '';
 if(isset($_FILES['fileToUpload']['tmp_name']) && file_exists($_FILES['fileToUpload1']['tmp_name'])){
 	$filename1 = "Profile/uploads1/".time().$_FILES['fileToUpload1']['name'];
 move_uploaded_file($_FILES['fileToUpload1']['tmp_name'], $filename1);
+
+	$filename1 = "uploads1/".time().$_FILES['fileToUpload1']['name'];
 }
 
 

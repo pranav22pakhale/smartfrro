@@ -12,11 +12,11 @@
 	}
 	if(isset($_POST['surname']))
 	{
-		$surname=$_POST['surname'];
+		$surname=ucfirst($_POST['surname']);
 	}
 	if(isset($_POST['given_name']))
 	{
-		$given_name=$_POST['given_name'];
+		$given_name=ucfirst($_POST['given_name']);
 	}
 	if(isset($_POST['date_of_birth']))
 	{

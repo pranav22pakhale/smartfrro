@@ -14,32 +14,37 @@
 </head>
 
 <body>
-<!--div class="container">
-  <h1>My First Bootstrap Page</h1>
-  <p>This is some text.</p>
-  
-<div-->
-<header>
 
-    <nav class="navbar  navbar-dark bg-dark">
-      <img src="images/got-logo.png" class="img-responsive rounded" style="height: 90px; margin-left:  85px;">
-  <!--a class="navbar-brand" href="#" style="align:center;"><h1>Fixed top</h1></a-->
-</nav>
+
 
 </header>
-
-<!--div class="w-100 p-3" style="background-color: #eee;">
+<?php
+ require_once 'header.php'
+?>
+<div class="w-100 p-3" style="background-color: #eee;">
               
-              <!--?php
+              <?php
 
-                    session_start();
+                     session_start();
+                    require_once 'database_connection.php';
 
-                    echo "Name: ".$_SESSION["username"];
+                    $uname = $_SESSION["username"];
+
+                    $sql = "SELECT * FROM sign_up WHERE email_id = '"  .$uname."'";
+
+                    $result = mysqli_query($con, $sql);
+
+                    $row = mysqli_fetch_assoc($result);
+
+                    echo '<span style="padding-right:150px">Name: '.$_SESSION["username"].'</span>';
+                    echo '<span style="padding-right:150px">Passport No: '.$row["passport_no"].'</span>';
+                    echo '<span style="padding-right:150px">Mobile: '.$row["mobile_no"].'</span>';
+
 
                      
                     
               ?>
-</div-->
+</div>
 
 <section style="margin-top: 50px;">
     <div  class="container"> 
@@ -50,11 +55,11 @@
             <fieldset>
                 <h2 class="fs-title">Education Details</h2>
          		<h3 class="fs-subtitle">Purpose</h3>
-                <input type="text" name="institute_name" placeholder="Institute Name"  class="form-control" value="test" />
-                <input type="text" name="institute_location" placeholder="Institute Location" value="test"/>
-                <input type="text" name="course_name" placeholder="Course Name" value="test"/>
-                <input type="text" name="course_duration" placeholder="Course Duration" value="test"/>
-                <input type="submit" name="next" class="next action-button" value="Next" value="test"/>
+                <input type="text" name="institute_name" placeholder="Institute Name"  class="form-control"  />
+                <input type="text" name="institute_location" placeholder="Institute Location" />
+                <input type="text" name="course_name" placeholder="Course Name" />
+                <input type="text" name="course_duration" placeholder="Course Duration" />
+                <input type="submit" name="next" class="next action-button" value="Next"/>
             </fieldset>
 
      </form>

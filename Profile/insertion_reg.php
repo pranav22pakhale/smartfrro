@@ -140,63 +140,6 @@
 		$vsub=$_POST['vsub'];
 	}
 
-	if(isset($_POST["t1"])) 
-    {
-        $target_dir = "uploads1/";
-         $t=time();
-        $target_file = $target_dir .$t. basename($_POST['f1']);
-        $uploadOk = 1;
-		
-echo $target_file.' '.$_POST['t1'];
-        // Check if image file is a actual image or fake image
-
-            // Check if file already exists
-        if (file_exists($target_file)) {
-            echo "Sorry, file already exists.";
-            $uploadOk = 0;
-        }
-        // Allow certain file formats
-        
-        // Check if $uploadOk is set to 0 by an error
-        if ($uploadOk == 0) {
-            echo "Sorry, your file was not uploaded.";
-        // if everything is ok, try to upload file
-        } else {
-            if (move_uploaded_file($_POST['t1'], $target_file)) {
-                echo "The file ". basename( $_POST['f1']). " has been uploaded.";
-            } else {
-                echo " First   Sorry, there was an error uploading your file.";
-            }
-        }
-
-	}
-	if(isset($_POST['t2'])){
-        $target_dir = "uploads1/";
-$target_file1 = $target_dir .$t. basename($_POST['f2']);
-
-echo $target_file.' '.$_POST['t2'];
-$uploadOk = 1;
-// Check if image file is a actual image or fake image
-// Check if file already exists
-if (file_exists($target_file1)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-}
-// Check file size
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-} else {
-    if (move_uploaded_file($_POST['t2'], $target_file1)) {
-        echo "The file ". basename( $_POST["f2"]). " has been uploaded.";
-    } else {
-        echo " ladcl adck Sorry, there was an error uploading your file.";
-    }
-}
-
-    }
-
 $target_file = $_POST['f1'];
 $target_file1 = $_POST['f2'];
 
@@ -228,5 +171,4 @@ if($pur=='medic')
 	{header("Location: medical_dept.php");}
 if($pur=='other')
 	{header("Location:others_dept.php");}
-
 ?>
