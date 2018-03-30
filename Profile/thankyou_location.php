@@ -41,9 +41,12 @@ margin-left:25%;
    		<h1 style="color: white; font-size: 50px; font-family: 'Titillium Web', sans-serif;">Thank you for Registration!</h1>
 
         <div class="alert alert-info">
-  			<strong style="font-size: 30px;">Welcome to Telangana !</strong>
+  			<strong style="font-size: 30px;">Thank you</strong>
+        <h3> Your Location has been recorded</h3>
 		</div>
-		
+
+        <a href="/smartfrro/login_user.php" type="button" class="btn btn-outline-success">Home</a>
+
     </div>
 </center>
 

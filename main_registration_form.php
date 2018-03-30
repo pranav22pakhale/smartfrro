@@ -58,9 +58,11 @@
 <div-->
 <header>
 
-    <nav class="navbar  navbar-dark bg-dark">
-      <img src="images/got-logo.png" class="img-responsive rounded" style="height: 90px; margin-left:  85px;">
+    <!--nav class="navbar  navbar-dark bg-dark">
+      <img src="images/got-logo.png" class="img-responsive rounded" style="height: 90px; margin-left:  85px;"-->
   <!--a class="navbar-brand" href="#" style="align:center;"><h1>Fixed top</h1></a-->
+
+  <?php require_once 'header.php';?>
 </nav>
 
 </header>
@@ -70,10 +72,24 @@
               <?php
 
                     session_start();
+                    require_once 'database_connection.php';
 
-                    echo "Name: ".$_SESSION["username"];
+                    $uname = $_SESSION["username"];
 
-                     
+                    $sql = "SELECT * FROM sign_up WHERE email_id = '"  .$uname."'";
+
+                    $result = mysqli_query($con, $sql);
+
+                    $row = mysqli_fetch_assoc($result);
+
+                    echo '<span style="padding-right:150px">Name: '.$_SESSION["username"].'</span>';
+                    echo '<span style="padding-right:150px">Passport No: '.$row["passport_no"].'</span>';
+                    echo '<span style="padding-right:150px">Mobile: '.$row["mobile_no"].'</span>';
+
+
+
+                    
+
                     
               ?>
 </div>
@@ -93,20 +109,24 @@
             <fieldset >
                 <h2 class="fs-title">Personal Details</h2>
                 <h3 class="fs-subtitle">This is step 1</h3>
-                <input type="text" name="surname" placeholder="Surname"  class="form-control" onblur="clk1(this);" />
-                <input type="text" name="given_name" placeholder="Given Name"  onblur="clk(this);" />
-                <input type="text" name="father_name" placeholder="Father's Name"  onblur="clk(this);" />
+                 <input type="text" name="surname" placeholder="Surname"  value="<?php echo ucfirst($row["surname"]);?>"  readonly />
+                <input type="text" name="given_name" placeholder="Given Name" value="<?php echo ucfirst($row["given_name"]);?>" readonly/ >
+                <input type="text" name="father_name" placeholder="Father's Name"  />
                 <input type="text" name="mother_name" placeholder="Mother's Name"  />
                 <input type="text" name="spouse_name" placeholder="Spouse's Name"  />
                 <input type="text" name="religion" placeholder="Religion" />
-                <input type="text" name="purpose" placeholder="Purpose" />
+                <select class="form-control">
+                    <option>Select Purpose</option>
+                    <option value="education">Education</option>
+                </select>
                 <input type="button" name="next" class="next action-button" value="Next" />
             </fieldset>
 
             <fieldset>
                 <h2 class="fs-title">Personal Details</h2>
                 <h3 class="fs-subtitle">This is step 2</h3>
-                <input type="date" name="dob" placeholder="Date of Birth"  />
+                <small class="left">Date of birth</small>
+                <input type="date" name="dob" placeholder="Date of Birth" value="<?php echo $row["dob"];?>" readonly/>
                 <small class="left">Profile Pic</small>
                 <input type="file" name="fileToUpload" id="fileToUpload" data-bottonText="choose profile picture">
                 <small class="left">All documents in one pdf</small>
@@ -123,7 +143,7 @@
                 <select class="form-control" id="exampleSelect1" name="origin">
                 <option>yes</option>
                 <option>no</option></select></div>
-                <input type="text" name="email_id" placeholder="Email Id" />
+                <input type="text" name="email_id" placeholder="Email Id" value="<?php echo $row["email_id"];?>" readonly/>
                 <input type="button" name="previous" class="previous action-button" value="Previous" />
                 <input type="button" name="next" class="next action-button" value="Next" />
             </fieldset>
@@ -138,7 +158,8 @@
                 <input type="text" name="state" placeholder="State in India" />
                 <input type="text" name="city" placeholder="City in India"/>
                 <input type="text" name="pincode" placeholder="Pincode" />
-                <input type="text" name="phone" placeholder="Phone Number"/>
+                 <small class="left">Phone Number</small>
+                <input type="text" name="phone" placeholder="Phone Number" value="<?php echo $row["mobile_no"];?>" readonly/>
                  <input type="button" name="previous" class="previous action-button" value="Previous" />
                 <input type="button" name="next" class="next action-button" value="Next" />
             </fieldset>
@@ -147,10 +168,13 @@
             <fieldset>
                 <h2 class="fs-title">Passport Details</h2>
                 <h3 class="fs-subtitle">This is step 4</h3>
-                <input type="text" name="passport_no" placeholder="Passport No" />
+                <small class="left">Passport Number</small>
+                <input type="text" name="passport_no" placeholder="Passport No" value="<?php echo $row["passport_no"];?>" readonly/>
                 <input type="text" name="country_of_issue" placeholder="Country of Issue" />
                 <input type="text" name="place_of_issue" placeholder="Place of Issue" />
+                <small class="left">Date of Issue</small>
                 <input type="date" name="date_of_issue" placeholder="Date of Issue" />
+                <small class="left">Expiry Date</small>
                 <input type="date" name="pexpiry_date" placeholder="Expiry Date" />
                 <input type="button" name="previous" class="previous action-button" value="Previous" />
                 <input type="button" name="next" class="next action-button" value="Next" />
@@ -162,7 +186,9 @@
                 <input type="text" name="visa_number" placeholder="Visa Number" />
                 <input type="text" name="vcountry_of_issue" placeholder="Country of Issue" />
                 <input type="text" name="vplace_of_isssue" placeholder="Place of Issue" />
+                <small class="left">Date of Issue</small>
                 <input type="date" name="vdate_of_issue" placeholder="Date of Issue"/>
+                <small class="left">Expiry Date</small>
                 <input type="date" name="vexpiry_date" placeholder="Expiry Date" />
                 <input type="text" name="visa_type" placeholder="Visa Type"/>
                 <input type="text" name="vsub" placeholder="Visa Subtype" />

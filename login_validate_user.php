@@ -9,7 +9,7 @@
 	$uname=$_POST["emailid"];
 	$password=$_POST['password'];
 
-	$sql = "SELECT email_id,password FROM sign_up";
+	$sql = "SELECT email_id,password ,verification FROM sign_up";
 	$result = mysqli_query($con, $sql);
 
     $_SESSION['emailid']=$uname;
@@ -24,7 +24,11 @@
 
 
 	if($flag == 1)
-	{
+	{	
+		$sql = "select verification from sign_up where email_id = '$uname' ";
+		$result = mysqli_query($con,$sql);
+		if($row["verification"] == 1)
+		{
 		$_SESSION["username"] = $uname;
 		$_SESSION["password"] = $password;
 
@@ -32,7 +36,10 @@
 		$_SESSION["pass"] = $row[0];
 
 		header("Location:check_for_registration.php");
-
+		}
+		else{
+			header("Location:check_mail.php");
+		}
 		
 
 	}

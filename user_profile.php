@@ -34,7 +34,7 @@ require_once 'head.php';
 
    </style>
 </head>
-<body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
+<body>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
@@ -42,16 +42,13 @@ require_once 'head.php';
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
-                <li><a href="/smartfrro/Logout.php">Logout</a></li>
+                <li><a href="login_user.php">Logout</a></li>
 				
             </ul>
         
 		
 		</nav>
 		
-
-
-
 		<?php
 	session_start();
 define('mysql_host','localhost');
@@ -66,7 +63,8 @@ mysqli_select_db($conn,'frro') or die(mysqli_error($conn));
 // Check connection
 
 $emailid=$_SESSION['emailid'];
-//$_SESSION['username'] = $emailid;
+
+
 
 	//$sql = "UPDATE registration SET registration.police_enquiry= WHERE email_id='ross.taylor@gmail.com' ";
  $sql ="Select * from registration where email_id='".$emailid."'";
@@ -235,20 +233,6 @@ if ($result->num_rows > 0) {
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
-    <script language="javaScript" type="text/javascript">
- function noBack(){window.history.forward()}
-            noBack();
-            window.onload=noBack;
-            window.onpageshow=function(evt){if(evt.persisted)noBack()}
-            window.onunload=function(){void(0)}
-            
-            function burstCache() {
-       if (!navigator.onLine) {
-           document.body.innerHTML = 'Loading...';
-       }
-   }
-</script>
-
     <script src="assets/js/jquery-1.10.2.js"></script>
       <!-- Bootstrap Js -->
     <script src="assets/js/bootstrap.min.js"></script>

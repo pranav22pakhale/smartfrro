@@ -22,15 +22,14 @@ $result = mysqli_query($con, $sql);
             <tr>
                 <th>id</th>
 				<th>name</th>
-				<th>surname</th>
+				
 				<th>email_id</th>
                 <th>purpose</th>
                 <TH>issue_date</TH>
 				<th>expiry_date</th>
 				<th>location_of_foreigner</th>
 				<th>police_station_name</th>
-				<th>verification</th>
-				<th>police_enquiry</th>
+				
             </tr>
         </thead>
         <tbody>
@@ -40,18 +39,18 @@ if (mysqli_num_rows($result) > 0) {
 
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
+		$name = $row["name"]." ".$row["surname"];
         echo "<tr>";
         echo "<td>" .$row["id"] . "</td>";
-        echo "<td> <a href='details.php?id=".$row['id']."'>" . $row["name"]. "</a></td>";
-		        echo "<td>".$row["surname"]."</td>";
-				        echo "<td>".$row["email_id"]."</td>";
+		 echo "<td>" .$name . "</td>";
+		echo "<td> <a href='../police_status.php?id=".$row["email_id"]."'>" .$row["email_id"]."</a></td>";
+		        
         echo "<td>".$row["purpose"]."</td>";
 		echo "<td>".$row["issue_date"]."</td>";
 		echo "<td>".$row["expiry_date"]."</td>";
 		echo "<td>".$row["location_of_foreigner"]."</td>";
 		echo "<td>" .$row["police_station_name"] . "</td>";
-		echo "<td>".$row["verification"]."</td>";
-			echo "<td>".$row["police_enquiry"]."</td>";
+		
         echo "</tr>";
     }
     echo "</table>";

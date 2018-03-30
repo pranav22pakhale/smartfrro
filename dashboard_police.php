@@ -79,7 +79,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>S</b>F</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Smart</b>Police</span>
+      <span class="logo-lg"><b><font size="5" color="white">Smart</b>Police</font></span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -419,13 +419,15 @@
             <span class="info-box-icon bg-aqua"><img src="images/guard.png"></img></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Total Profiles
+              <span class="info-box-text">PROFILES CURRENT<br>LOCATION
 			  </span>
               <span class="info-box-number"><small>
 			  <?php
 
                     require_once 'db_connection.php';
-                      $sql='SELECT * FROM police';
+                     $sql = "SELECT *,MAX(date_time)
+        FROM policedb.police,frro.live_location
+		WHERE policedb.police.email_id=frro.live_location.email_id";
                       $result = mysqli_query($con, $sql);
                       $row_count=mysqli_num_rows($result);
                       // output data of each row
@@ -438,6 +440,31 @@
           </div>
           <!-- /.info-box -->
         </div>
+		</div>
+		<div class="row">
+		 <div class="col-md-3 col-sm-6 col-xs-6">
+	         	<div class="info-box" onClick="window.location.href='queue_functions/queue_police_insert.php';"style="cursor: pointer;">
+	            <span class="info-box-icon bg-green" ><img class="ion ion-ios-people-outline" src="images/send_pol.png"></img></span>
+		            <div class="info-box-content">
+		            <span class="info-box-text">Send to<br>FRRO</span>
+		              <span class="info-box-number">
+		              </span>
+		            </div>            <!-- /.info-box-content -->
+	       	    </div>
+				</div>
+				
+				<div class="col-md-3 col-sm-6 col-xs-6">
+	         	<div class="info-box" onClick="window.location.href='queue_functions/queue_police_retrieve.php';"style="cursor: pointer;">
+	            <span class="info-box-icon bg-blue" ><img class="ion ion-ios-people-outline" src="images/download.png"></img></span>
+		            <div class="info-box-content">
+		            <span class="info-box-text">Retrieve from<br>FRRO</span>
+		              <span class="info-box-number">
+		              </span>
+		            </div>            <!-- /.info-box-content -->
+	       	    </div>
+				</div>
+		
+		</div>
       <div class="row">
         <div class="col-md-12">
           <div class="box">
