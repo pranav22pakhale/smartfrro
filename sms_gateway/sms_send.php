@@ -77,7 +77,7 @@ $hash=md5($.$password); */  //hash of usrname and passwd
 include('database_connection.php');
 ini_set('max_execution_time', 0);
 $date2=date_create(date("Y-m-d"));
-$sql="SELECT  email_id, expiry_date, mobile_no
+$sql="SELECT  email_id, expiry_date, mobile_no, given_name
     FROM visa_details
     WHERE datediff(curdate(),expiry_date)<16";
 /*$sql="SELECT  email_id, expiry_date, mobile_no
@@ -92,7 +92,7 @@ if (mysqli_num_rows($result) > 0) {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
  
-$name = ['given_name'];
+$name =$row ['given_name'];
 
 
 $message = '
@@ -105,7 +105,7 @@ $message = '
     <tr>
       <th>
           Hello '.$name.',<br><br>
-          
+          Your Visa will be expiring after '.date_diff($date2,$row[expiry_date]).' days.
 
           <br><br>
           Thankyou,<br> 
@@ -132,7 +132,9 @@ echo $row['email_id'];
 mail($row['email_id'],$subject,$message,implode("\r\n", $headers));
 $date_now=date_create(date("Y-m-d"));
 $phonenum =''.$row['mobile_no'].'';
-$message ="Hello ".$row['given_name'];
+$message ="Hello ".$row['given_name'].
+"Your Visa will be expiring after".date_diff($date2,$row[expiry_date])." days".
+;
 $debug = true;
 
 ozekiSend($phonenum,$message,$debug);

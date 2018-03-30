@@ -22,7 +22,7 @@
 	if($flag == 1)
 	{
 		$_SESSION["username"] = $uname;
-		$_SESSION['frro_login'] = true;
+		$_SESSION['frro_logged'] = true;
 		$_SESSION["password"] = $password;
 		header("Location:http://localhost/smartfrro/Dashboard_frro.php");
 	}

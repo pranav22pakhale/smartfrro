@@ -71,7 +71,7 @@ $_SESSION['email_to'] = $email_to;
 	<div class="col-md-5">
 	</div>
 	<div  class="col-md-3">
-<form action="email_verify.php">
+<form action="/smartfrro/sms_gateway/sms_send.php">
 	<center><input type="submit" class="btn btn-info"></input></center>
 </div>
 <div  class="col-md-4">

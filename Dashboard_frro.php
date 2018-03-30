@@ -310,9 +310,9 @@
                       //$sql='SELECT id FROM registration where verification=""';
                      //$sql = "SELECT COUNT(*) FROM live_location";
                       //$sql = "select * from live_location";
-                    $sql="SELECT email_id, visa_number, expiry_date 
+                     $sql="SELECT  email_id, expiry_date, mobile_no
     FROM visa_details
-    WHERE datediff(curdate(),expiry_date)=15 and datediff(curdate(),expiry_date)=11";
+    WHERE datediff(curdate(),expiry_date)<16";
                       $result = mysqli_query($con, $sql);
                       $row_count=mysqli_num_rows($result);
                       // output data of each row
@@ -324,7 +324,7 @@
 
 
             <!-- /.info-box-content -->
-       	 </div>
+         </div>
 
             </div>
             <div class="col-md-3 col-sm-6 col-xs-6">
@@ -351,24 +351,38 @@
           </div>
         </div>
             <div class="col-md-3 col-sm-6 col-xs-6">
-	         	<div class="info-box" onClick="window.location.href='queue_functions/queue_frro_insert.php';"style="cursor: pointer;">
-	            <span class="info-box-icon bg-green" ><img class="ion ion-ios-people-outline" src="images/send_pol.png"></img></span>
-		            <div class="info-box-content">
-		            <span class="info-box-text">Send to<br>Police Department</span>
-		              <span class="info-box-number">
-		              </span>
-		            </div>            <!-- /.info-box-content -->
-	       	    </div>
+            <div class="info-box" onClick="window.location.href='queue_functions/queue_frro_insert.php';"style="cursor: pointer;">
+              <span class="info-box-icon bg-green" ><img class="ion ion-ios-people-outline" src="images/send_pol.png"></img></span>
+                <div class="info-box-content">
+                <span class="info-box-text">Send to<br>Police Department</span>
+                  <span class="info-box-number">
+                  </span>
+                </div>            <!-- /.info-box-content -->
+              </div>
             </div><div class="col-md-3 col-sm-6 col-xs-6">
-	         	<div class="info-box" onClick="window.location.href='education_queue_functions/education_queue_frro_insert.php';"style="cursor: pointer;">
-	            <span class="info-box-icon bg-yellow" ><img class="ion ion-ios-people-outline" src="images/send_pol.png"></img></span>
-		            <div class="info-box-content">
-		            <span class="info-box-text">Send to<br>Education Department</span>
-		              <span class="info-box-number">
-		              </span>
-		            </div>            <!-- /.info-box-cogintent -->
-	       	    </div>
+            <div class="info-box" onClick="window.location.href='education_queue_functions/education_queue_frro_insert.php';"style="cursor: pointer;">
+              <span class="info-box-icon bg-yellow" ><img class="ion ion-ios-people-outline" src="images/send_pol.png"></img></span>
+                <div class="info-box-content">
+                <span class="info-box-text">Send to<br>Education Department</span>
+                  <span class="info-box-number">
+                  </span>
+                </div>            <!-- /.info-box-cogintent -->
+              </div>
             </div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+
+          <div class="info-box" onClick="window.location.href='queue_functions/queue_frro_retrieve.php';"style="cursor: pointer;">
+            <span class="info-box-icon bg-purple" ><img class="ion ion-ios-people-outline" src="images/download.png"></img></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Retrieve from <br>police</span>
+              
+          
+
+        </div>
+           </div>
+          <!-- /.info-box -->
+        </div>
           <!-- /.info-box -->
         </div>
       <div class="row">
@@ -877,7 +891,7 @@ var chart = new CanvasJS.Chart("piechart", {
       { y: pie['education'], label: "Education" },
       { y: pie['journalism'], label: "Journalism" },
       { y: pie['medic'], label: "medic" },
-      { y: pie['business'], label: "others"},
+      { y: pie['business'], label: "business"},
      
     ]
   }]

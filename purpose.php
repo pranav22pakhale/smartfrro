@@ -6,6 +6,7 @@
 		header("Location: loginFRRO.php");
 	}
 
+
 	if(!isset($_GET['dept'])){
 		header("Location: Dashboard_frro.php");
 	}

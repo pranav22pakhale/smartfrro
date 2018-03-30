@@ -12,9 +12,12 @@ require_once 'head.php';
 include('database_connection.php');
 
 $date2=date_create(date("Y-m-d"));
-$sql="SELECT email_id, visa_number, expiry_date,mobile_no
+/*$sql="SELECT email_id, visa_number, expiry_date,mobile_no
 		FROM visa_details
-		WHERE (datediff(curdate(),expiry_date)=15 AND datediff(curdate(),expiry_date)=13)";
+		WHERE (datediff(curdate(),expiry_date)=15 )";*/
+    $sql="SELECT  email_id, expiry_date, mobile_no
+    FROM visa_details
+    WHERE datediff(curdate(),expiry_date)<16";
 
 $result = mysqli_query($con, $sql);
 //$email_to = "hello@wew.com";
@@ -90,7 +93,7 @@ $_SESSION['mobile_to'] = $mobile_to;
 	<div class="col-md-5">
 	</div>
 	<div  class="col-md-3">
-<form action="email_verify.php">
+<form action="/smartfrro/sms_gateway/sms_send.php">
 	<center><input type="submit" class="btn btn-info"></input></center>
 </div>
 <div  class="col-md-4">
