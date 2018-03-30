@@ -16,9 +16,28 @@
     <script type="text/javascript" src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="jquery.min.js"></script>
 
-<script type="text/javascript">
+	<style>
+			body
+			{
+				background-image: url('images/hydrabad.jpg');
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-position: center;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+			}
 
-</script>
+			.outer
+			{
+				height: 28%;
+				width: 28%;
+				position: fixed;
+				top: 15%;
+				left: 35%;
+			}
+		</style>
 <style type="text/css">
 
 .color
@@ -26,12 +45,12 @@
 	color:#FF0000;
 }
 
-body{
+/*body{
 
     background-image: url('images/source2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-  }
+  }*/
   </style>
 </head>
 <body>
@@ -45,7 +64,7 @@ body{
   
   </nav>
 <div class="container">
-	<div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 loginbox"> 
+	<div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 loginbox" style="opacity: 0.89"> 
 		<div class="panel panel-info" > 
 			<div class="panel-heading"> 
 				<div class="panel-title"> LOGIN </div> 
@@ -88,16 +107,10 @@ body{
 
  							?>
 				            <img id="captcha_code" src="create_image.php" />
-							<button name="recaptcha" type="button" class="btnRefresh" onclick='window.location.reload();' >Refresh</button>
+							<i class="fa fa-refresh fa-spin" onclick="window.location.reload();" style="cursor:pointer"></i>
 
         				</div> 
-						<div class="input-group"> 
-							<div class="checkbox"> 
-								<label> 
-									<input id="login-remember" type="checkbox" name="remember" value="1"> Remember me 
-								</label> 
-							</div> 
-						</div> 
+						 
 						<div class="form-group margT10"> 
 						<!-- Button --> 
 							<div class="col-sm-12 controls"> 
@@ -105,6 +118,15 @@ body{
 								<center><button type="submit">login</button></center>
 							</div> 
 						</div> 
+
+						<div class="input-group"> 
+							<div class="checkbox"> 
+								<label> 
+									<input id="login-remember" type="checkbox" name="remember" value="1"> Remember me 
+								</label> 
+							</div> 
+						</div>
+
 						<div class="form-group"> 
 							<div class="col-md-12 control"> 
 								<div class="no-acc"> 

@@ -12,21 +12,23 @@ require_once 'head.php';
 include('database_connection.php');
 
 $date2=date_create(date("Y-m-d"));
-$sql="SELECT email_id, visa_number, expiry_date 
+$sql="SELECT email_id, visa_number, expiry_date,mobile_no
 		FROM visa_details
 		WHERE datediff(curdate(),expiry_date)<16";
 
 $result = mysqli_query($con, $sql);
-$email_to = "hello@wew.com";
+//$email_to = "hello@wew.com";
 ?>
 <div class="container">
     <div class="row">
 		<table id="example" class="display nowrap" cellspacing="0" width="100%">
 		        <thead>
 		            <tr>
-		                <th>email_id</th>
-		                <th>visa_number</th>
-		                <TH>expiry_date</TH>
+		                <th>Email Id</th>
+		                <th>Visa Number</th>
+		                <TH>Expiry Date</TH>
+		                <TH>Mobile No.</TH>
+		                
 		            </tr>
 		        </thead>
 		        <tbody>
@@ -34,13 +36,30 @@ $email_to = "hello@wew.com";
 
 		if (mysqli_num_rows($result) > 0) {
 
+       if($row = mysqli_fetch_assoc($result)){
+       	$mobile_to= $row['mobile_no'];
+        $email_to = $row['email_id'];
+        echo "<tr>";
+		        echo "<td>" .$row["email_id"] . "</td>";
+		        echo "<td>". $row["visa_number"]."</td>";
+		        echo "<td>".$row["expiry_date"]."</td>";
+		        echo "<td>".$row["mobile_no"]."</td>";
+		        
+		        echo "</tr>";
+		    
+       }
+
 		    // output data of each row
 		    while($row = mysqli_fetch_assoc($result)) {
-		    	$email_to = $email_to.",".$row['email_id'];
+		    	/*$mobile_to= $mobile_to.",".$row['mobile_no'];
+		    	$email_to = $email_to.",".$row['email_id'];*/
+		        
 		        echo "<tr>";
 		        echo "<td>" .$row["email_id"] . "</td>";
 		        echo "<td>". $row["visa_number"]."</td>";
 		        echo "<td>".$row["expiry_date"]."</td>";
+		        echo "<td>".$row["mobile_no"]."</td>";
+		        
 		        echo "</tr>";
 		    }
 		    echo "</table>";
@@ -57,9 +76,15 @@ $email_to = "hello@wew.com";
 
 <?php
 
-$_SESSION['mes2'] = "Your visa will be expired within 15 days. ";
+/*$_SESSION['mes2'] = "Your visa will be expired within 15 days. ";
+*/
+/*$_SESSION['email_to'] = $email_to;
+$_SESSION['mobile_to'] = $mobile_to;
+*/
 
-$_SESSION['email_to'] = $email_to;
+
+
+
 ?>
 <div class="row">
 	<div class="col-md-5">

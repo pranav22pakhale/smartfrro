@@ -10,8 +10,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+    <!-- <style>
+            body
+            {
+                background-image: url('images/hyderabad4.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+
+            .outer
+            {
+                height: 28%;
+                width: 28%;
+                position: fixed;
+                top: 15%;
+                left: 35%;
+            }
+        </style> -->
+
 </head>
-    
+  
+
+
 <script type="text/javascript">
     function clk1(inputfield){
         if(inputfield.value.length==0)
@@ -25,7 +50,7 @@
 
 </script>
 
-<body>
+<body >
 <!--div class="container">
   <h1>My First Bootstrap Page</h1>
   <p>This is some text.</p>
@@ -54,7 +79,7 @@
 </div>
 
 <section style="margin-top: 50px;">
-    <div  class="container"> 
+    <div class="container" > 
         <form action="Profile/insertion_reg.php" id="msform" method="POST" enctype="multipart/form-data">
 
             <ul id="progressbar">
@@ -65,7 +90,7 @@
                 <li>Visa Details</li>
             </ul>
 
-            <fieldset>
+            <fieldset >
                 <h2 class="fs-title">Personal Details</h2>
                 <h3 class="fs-subtitle">This is step 1</h3>
                 <input type="text" name="surname" placeholder="Surname"  class="form-control" onblur="clk1(this);" />
