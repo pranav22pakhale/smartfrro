@@ -59,6 +59,7 @@
                 <input type="text" name="hospital_location" placeholder="Hospital location" />
                 <input type="text" name="medical_specialist" placeholder="Medical specialist" />
                 <input type="text" name="specialist_name" placeholder="Specialist name" />
+                <label for="admit_date">Admit date</label>
                 <input type="date" name="admit_date" placeholder="Admit date"  />
 
                 <input type="submit" name="next" class="next action-button" value="Next"/>

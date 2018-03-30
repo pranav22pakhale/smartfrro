@@ -95,8 +95,10 @@
 </div>
 
 <section style="margin-top: 50px;">
-    <div class="container" > 
-        <form action="Profile/insertion_reg.php" id="msform" method="POST" enctype="multipart/form-data">
+
+    <div  class="container"> 
+        <form action="preview_form.php" id="msform" method="POST" target="_blank" enctype="multipart/form-data">
+
 
             <ul id="progressbar">
                 <li class="active">Personal Detail Page 1</li>
@@ -115,9 +117,12 @@
                 <input type="text" name="mother_name" placeholder="Mother's Name"  />
                 <input type="text" name="spouse_name" placeholder="Spouse's Name"  />
                 <input type="text" name="religion" placeholder="Religion" />
-                <select class="form-control">
-                    <option>Select Purpose</option>
+                <select class="form-control" name="purpose">
+                    <option >Select Purpose</option>
                     <option value="education">Education</option>
+                    <option value="medical">Medical</option>
+                    <option value="jouranlism">Jouranlism</option>
+                    <option value="other">Others</option>
                     
                 </select>
                 <input type="button" name="next" class="next action-button" value="Next" />
@@ -194,7 +199,7 @@
                 <input type="text" name="visa_type" placeholder="Visa Type"/>
                 <input type="text" name="vsub" placeholder="Visa Subtype" />
                 <input type="button" name="previous" class="previous action-button" value="Previous" />
-                <button type="submit" class=" action-button" name="submit">SUBMIT</button>
+                <button type="submit" class=" action-button" name="submit">PREVIEW</button>
             </fieldset>
 
         </form>
