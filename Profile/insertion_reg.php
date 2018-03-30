@@ -140,100 +140,67 @@
 		$vsub=$_POST['vsub'];
 	}
 
-	if(isset($_POST["submit"])) 
+	if(isset($_POST["t1"])) 
     {
-        $target_dir = "uploads/";
+        $target_dir = "uploads1/";
          $t=time();
-        $target_file = $target_dir .$t. basename($_FILES["fileToUpload"]["name"]);
+        $target_file = $target_dir .$t. basename($_POST['f1']);
         $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+		
+echo $target_file.' '.$_POST['t1'];
         // Check if image file is a actual image or fake image
-
-            $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-            if($check !== false) {
-                echo "File is an image - " . $check["mime"] . ".";
-                $uploadOk = 1;
-            } else {
-                echo "File is not an image.";
-                $uploadOk = 0;
-            }
 
             // Check if file already exists
         if (file_exists($target_file)) {
             echo "Sorry, file already exists.";
             $uploadOk = 0;
         }
-        // Check file size
-        if ($_FILES["fileToUpload"]["size"] > 500000) {
-            echo "Sorry, your file is too large.";
-            $uploadOk = 0;
-        }
         // Allow certain file formats
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-        && $imageFileType != "gif" ) {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-            $uploadOk = 0;
-        }
+        
         // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
             echo "Sorry, your file was not uploaded.";
         // if everything is ok, try to upload file
         } else {
-            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+            if (move_uploaded_file($_POST['t1'], $target_file)) {
+                echo "The file ". basename( $_POST['f1']). " has been uploaded.";
             } else {
-                echo "Sorry, there was an error uploading your file.";
+                echo " First   Sorry, there was an error uploading your file.";
             }
         }
 
-
+	}
+	if(isset($_POST['t2'])){
         $target_dir = "uploads1/";
-$target_file1 = $target_dir . basename($_FILES["fileToUpload1"]["name"]);
+$target_file1 = $target_dir .$t. basename($_POST['f2']);
+
+echo $target_file.' '.$_POST['t2'];
 $uploadOk = 1;
-$FileType = strtolower(pathinfo($target_file1,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
-    $check = filesize($_FILES["fileToUpload1"]["tmp_name"]);
-    if($check != false) {
-        echo "File is an - " . $check["mime"] . ".";
-        $uploadOk = 1;
-    } else {
-        echo "File is not an pdf.";
-        $uploadOk = 0;
-    }
-}
 // Check if file already exists
 if (file_exists($target_file1)) {
     echo "Sorry, file already exists.";
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["fileToUpload1"]["size"] > 500000) {
-    echo "Sorry, your file is too large.";
-    $uploadOk = 0;
-}
-// Allow certain file formats
-if($FileType != "pdf" ) {
-    echo "Sorry, only pdf files are allowed.";
-    $uploadOk = 0;
-}
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
-    if (move_uploaded_file($_FILES["fileToUpload1"]["tmp_name"], $target_file1)) {
-        echo "The file ". basename( $_FILES["fileToUpload1"]["name"]). " has been uploaded.";
+    if (move_uploaded_file($_POST['t2'], $target_file1)) {
+        echo "The file ". basename( $_POST["f2"]). " has been uploaded.";
     } else {
-        echo "Sorry, there was an error uploading your file.";
+        echo " ladcl adck Sorry, there was an error uploading your file.";
     }
 }
 
     }
 
+$target_file = $_POST['f1'];
+$target_file1 = $_POST['f2'];
 
-
-    $sql = "insert into registration (surname,given_name,sex,father_name,mother_name,spouse_name,dob,religion,purpose,present_nationality,previous_nationality,indian_origin,profile_pic,document,email_id,verification) values ('$surname','$given_name','male','$father_name','$mother_name','$spouse_name','$dob','$religion','$purpose','$pre_nationality','$prev_nationality','$origin','$target_file','$target_file1','$email_id','unverified')";
+    $sql = "insert into registration (surname,given_name,sex,father_name,mother_name,spouse_name,dob,religion,purpose,present_nationality,previous_nationality,indian_origin,profile_pic,document,email_id,verification) values ('$surname','$given_name','$sex','$father_name','$mother_name','$spouse_name','$dob','$religion','$purpose','$pre_nationality','$prev_nationality','$origin','$target_file','$target_file1','$email_id','unverified')";
 
 
     $result = mysqli_query($con,$sql);
@@ -252,8 +219,14 @@ if ($uploadOk == 0) {
     $result = mysqli_query($con,$sql);
 
   	//header("Location:thankyou.php");
-
-    header("Location:eduction.php");
-
+	$pur=$_POST["purpose"];
+	if($pur=='education')
+	{header("Location:education.php");}
+if($pur=='journalism')
+	{header("Location:journalism.php ");}
+if($pur=='medic')
+	{header("Location: medical_dept.php");}
+if($pur=='other')
+	{header("Location:others_dept.php");}
 
 ?>
