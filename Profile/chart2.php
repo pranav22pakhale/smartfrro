@@ -32,6 +32,19 @@ require_once 'head.php';
 	padding-left:25px;
 }
 
+.top-navbar{
+  height: 90px;
+}
+#page-wrapper{        
+        padding-top: 30px;
+        padding-bottom: 15px;
+    }
+ 
+.navbar-side{
+       padding-top: 30px;
+        padding-bottom: 15px;
+ 
+}
    </style>
 </head>
 <body>
@@ -56,16 +69,14 @@ if (mysqli_num_rows($result) > 0) {
   
   ?>
     <div id="wrapper">
-        <nav class="navbar navbar-default top-navbar" role="navigation">
-            <div class="navbar-header">
-                <a class="navbar-brand" ><strong>e FRRO Online Service</strong></a>
+        <nav class="navbar navbar-default top-navbar row" role="navigation" >
+            <div class="navbar-header" >
+                <img src="/smartfrro/images/got-logo.png" height="79px" width="79px" style="margin-left: 90px;display:inline-block;">
+    <h1 style="color:white; display:inline-block;margin-left: 70px;" > <b>e-Smart</b>Frro</h1>
+     <a href="logout.php"><button class="btn btn-outline-danger my-2 my-sm-0 btn-lg" type="submit" style="float:left;" >LOGOUT</button></a>
             </div>
 
-            <ul class="nav navbar-top-links navbar-right">
-                <li><?php echo "<td>  <a href='chart.php?id=".$email_id."'>" ?> BACK</a></li>
-				
-            </ul>
-   
+            
 		
 		</nav>
 		
@@ -108,7 +119,7 @@ if (mysqli_num_rows($result) > 0) {
 						 
 									
 		</div>
-            <div id="page-inner" > 
+            <div id="page-inner" style="margin-left: 260px;"> 
              
                 <div  > 
                     

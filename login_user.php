@@ -27,6 +27,14 @@
     body{        
         padding-top: 140px;
         padding-bottom: 15px;
+        background-image: url('/smartfrro/images/h.png'); 	
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-position: center;	
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
     }
 
     .container{
@@ -36,9 +44,10 @@
     .fixed-header, .fixed-footer{
         width: 100%;
         position: fixed;        
-        background: #343a40;
+        background:#63605a;
         padding: 15px 0;
         color: #fff;
+
     }
     .fixed-header{
 	 height: 100px;
@@ -46,6 +55,7 @@
   	z-index:1000; 
         top: 0;
       margin-top: -10px;
+      opacity: .75;
     }
     .fixed-footer{
         bottom: 0;
@@ -72,19 +82,26 @@
 
 body{
 
-    background-image: url('images/source2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url('/smartfrro/images/h.jpg'); 	
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-position: center;	
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   opacity: .75;
+
   }
   </style>
 </head>
-<body>
+<body onLoad="noBack();" onpageshow="if (event.persisted) noBack();">
 <div class="fixed-header">
         <div class="container">
            <nav>
-                    <img src="images/got-logo.png" height="79" width="79" alt="logo" />
-                <a href><h1>e-FRRO Online Portal </h1></a>
-                
+                    <img src="images/got-logo.png" height="79" width="79" alt="logo" style="display: inline-block;" />
+                	<a href="#" style="display: inline-block;"><h1><b>e-Smart</b>Frro</h1></a>
+                	
             </nav>
         </div>
         </div>
@@ -99,7 +116,7 @@ body{
   
   
 <div class="container">
-	<div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 loginbox"> 
+	<div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 loginbox" style="margin-left: 29% !important; width: 43% !important;"> 
 		<div class="panel panel-info" > 
 			<div class="panel-heading"> 
 				<div class="panel-title"> LOGIN </div> 
@@ -192,6 +209,20 @@ function validate() {
 
 			
 }
+
+
+ 
+ function noBack(){window.history.forward()}
+            noBack();
+            window.onload=noBack;
+            window.onpageshow=function(evt){if(evt.persisted)noBack()}
+            window.onunload=function(){void(0)}
+            
+            function burstCache() {
+       if (!navigator.onLine) {
+           document.body.innerHTML = 'Loading...';
+       }
+   }
 </script>
 
 <!-- 'window.location.reload();' -->

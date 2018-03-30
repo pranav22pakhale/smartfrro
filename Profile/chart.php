@@ -34,9 +34,9 @@ require_once 'head.php';
 
    </style>
 </head>
-<body>
+<body style="overflow: hidden;">
     <div id="wrapper">
-        <nav class="navbar navbar-default top-navbar" role="navigation">
+        <!--nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
                 <a class="navbar-brand" ><strong>e FRRO Online Service</strong></a>
             </div>
@@ -47,7 +47,15 @@ require_once 'head.php';
             </ul>
         
 		
-		</nav>
+		</nav-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar" style="height: 100px;">
+      <div class="container">
+        <img src="/smartfrro/images/got-logo.png" height="79" width="79" style="display: inline-block;">
+        <h1 style="display: inline-block;"><b>e-Smart</b>frro</h1>
+
+
+      </div>
+</nav>
 		
 		<?php
     session_start();
@@ -110,7 +118,7 @@ if (mysqli_num_rows($result) > 0) {
 						 
 									
 		</div>
-            <div id="page-inner" > 
+            <div id="page-inner" style="margin-left: 260px;"> 
              
                 <div  > 
                     

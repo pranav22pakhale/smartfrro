@@ -115,7 +115,7 @@ if (mysqli_num_rows($result) > 0) {
 						 
 									
 		</div>
-            <div id="page-inner" > 
+            <div id="page-inner" style="margin-left: 260px;"> 
              
                 <div  > 
                     

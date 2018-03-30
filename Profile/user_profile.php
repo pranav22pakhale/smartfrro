@@ -34,7 +34,7 @@ require_once 'head.php';
 
    </style>
 </head>
-<body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
+<body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="" style="overflow:hidden;">
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
@@ -93,9 +93,7 @@ if ($result->num_rows > 0) {
                     <li>
                         <a href="user_profile_purpose_details.php">Purpose Details</a>
                     </li>
-					<li>
-                        <a href="chart3.php" > Edit Details </a>
-                    </li>
+					
                     <li>
                         <a href="user_location_front.php" > Provide Location </a>
                     </li>
@@ -118,7 +116,7 @@ if ($result->num_rows > 0) {
 						 
 									
 		</div>
-            <div id="page-inner" > 
+            <div id="page-inner" style="margin-left: 260px;"> 
              
                 <div  > 
                     
@@ -130,12 +128,12 @@ if ($result->num_rows > 0) {
                         </div-->
 						
                         <div class="panel-body">
-                            <table class="table table-hover ">
+                            <table class="table table-hover table-dark.">
     
 	
 	
       
-    
+    <span class="border border-primary">
     <tbody>
       <tr>
         <td>First Name</td>
@@ -211,7 +209,7 @@ if ($result->num_rows > 0) {
 	    
 	  
     </tbody>
-  
+  </span>
   
 <?php }} ?>
 	</table>

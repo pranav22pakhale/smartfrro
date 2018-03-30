@@ -4,20 +4,26 @@
   <title>Location</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<header>
-
-    <nav class="navbar  navbar-dark bg-blue" style="padding: .5rem 1rem; background-color: #343a40!important;border-radius: 0">
-
-      <img src="../images/got-logo.png" class="img-responsive rounded" style="height: 90px; margin-left:  85px;">
-      
-       
+<style type="text/css">
+  nav{
+    height: 100px !important;
+    background-color: #343a40;
+    border-radius: 0px !important;
+  }
   
+</style>
+<header>
+  <nav class="navbar navbar-dark bg-dark">
+    <img src="/smartfrro/images/got-logo.png" height="79px" width="79px" style="margin-left: 90px;">
+    <h1 style="color:white;margin-left:-70px;"> <b>e-Smart</b>Frro</h1>
+     <a href="logout.php"><button class="btn btn-outline-danger my-2 my-sm-0 btn-lg" type="submit" style="margin-left: 880px" >LOGOUT</button></a>
+  <!--span class="navbar-brand mb-0 h1">Navbar</span-->
 </nav>
 </header>
 <div class="w-100 p-3" style="background-color: #eee; padding: 10px; margin-top: -20px;">
@@ -61,7 +67,7 @@
                     
               ?-->
 
-<button class="btn btn-primary " onclick="getLocation()">SUBMIT</button>
+<center><button class="btn btn-primary " onclick="getLocation()">Provide Location</button></center>
 
 <script>
 //var x = document.getElementById("demo");
@@ -87,13 +93,13 @@ function showPosition(position) {
 
 </script>
  <form action="t.php" method="POST">
-    <div class="form-group col-md-5 center-block">
+    <div class="form-group">
       <!--input type="text" class="form-control" name="user_name" placeholder=""-->
       <input type="hidden" class="form-control"  name="latitude" id="la" >
     </div>
     <input type="hidden" class="form-control"  name="longitude" id="lo">
     <!--/div-->
-    <button type="submit" class="btn btn-primary">Confirm Submission</button>
+    <center><button type="submit" class="btn btn-primary">Confirm Submission</button></center>
   </form> 
 </div>
 

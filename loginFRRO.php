@@ -10,15 +10,7 @@
   <?php include 'css/css.html'; ?>
 </head>
 
-<body style=" 
-  background-image: url('images/t.jpg');   
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-    background-position: center;  
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;">
+<body>
   <header>
 
     <!--nav class="navbar  navbar-dark bg-dark">

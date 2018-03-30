@@ -878,7 +878,7 @@ var chart = new CanvasJS.Chart("piechart", {
       { y: pie['education'], label: "Education" },
       { y: pie['journalism'], label: "Journalism" },
       { y: pie['medic'], label: "medic" },
-      { y: pie['business'], label: "business"},
+      { y: pie['business'], label: "others"},
      
     ]
   }]

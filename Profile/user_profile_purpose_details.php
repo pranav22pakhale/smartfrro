@@ -34,7 +34,7 @@ require_once 'head.php';
 
    </style>
 </head>
-<body>
+<body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" style="overflow: hidden;">
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
@@ -42,7 +42,7 @@ require_once 'head.php';
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
-                <li><a href="login_user.php">Logout</a></li>
+                <li><a href="/smartfrro/login_user.php">Logout</a></li>
 				
             </ul>
    
@@ -89,11 +89,11 @@ if ($result->num_rows > 0) {
                     <li>
                         <a href="user_profile_purpose_details.php" class="active-menu">Purpose Details</a>
                     </li>
-					<li>
+					<!--li>
                         <a href="chart3.php" > Edit Details </a>
-                    </li>
+                    </li-->
                     <li>
-                        <a href="chart3.php" > Provide Location </a>
+                        <a href="user_location_front.php" > Provide Location </a>
                     </li>
                     
                                 
@@ -111,7 +111,7 @@ if ($result->num_rows > 0) {
 						 
 									
 		</div>
-            <div id="page-inner" > 
+            <div id="page-inner" style="margin-left: 260px;"> 
              
                 <div  > 
                     
@@ -128,7 +128,8 @@ if ($result->num_rows > 0) {
 	<?php
 	
 
-$sql = "SELECT* FROM passport_details WHERE email_id='".$emailid."'";
+$sql = "SELECT* FROM education_dept WHERE email_id='".$emailid."'";
+/*$sql = "SELECT* FROM education_dept WHERE email_id='e1'";*/
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -144,30 +145,26 @@ if ($result->num_rows > 0) {
     
     <tbody>
       <tr>
-        <td>Passport Number</td>
-        <td><?php echo $row['passport_number'];  ?></td>
+        <td>Institute Name</td>
+        <td><?php echo $row['institute_name'];  ?></td>
         
       </tr>
       <tr>
-        <td>Country of Issue</td>
-        <td><?php echo $row['country_of_issue'];  ?></td>
+        <td>Institute Location</td>
+        <td><?php echo $row['institute_location'];  ?></td>
         
       </tr>
       <tr>
-        <td>Place of Issue</td>
-        <td><?php echo $row['place_of_issue'];  ?></td>
+        <td>Course Name</td>
+        <td><?php echo $row['course_name'];  ?></td>
        
       </tr>
 	  <tr>
-        <td>Date of Issue</td>
-        <td><?php echo $row['date_of_issue'];  ?></td>
+        <td>Course Duration</td>
+        <td><?php echo $row['course_duration'];  ?></td>
        
       </tr>
-	  <tr>
-        <td>Expiry Date</td>
-        <td><?php echo $row['expiry_date'];  ?></td>
-       
-      </tr>
+	 
 	                
 	  
     </tbody>
@@ -195,6 +192,19 @@ if ($result->num_rows > 0) {
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
+    <script type="text/javascript">
+       function noBack(){window.history.forward()}
+            noBack();
+            window.onload=noBack;
+            window.onpageshow=function(evt){if(evt.persisted)noBack()}
+            window.onunload=function(){void(0)}
+            
+            function burstCache() {
+       if (!navigator.onLine) {
+           document.body.innerHTML = 'Loading...';
+       }
+   }
+    </script>
     <script src="assets/js/jquery-1.10.2.js"></script>
       <!-- Bootstrap Js -->
     <script src="assets/js/bootstrap.min.js"></script>

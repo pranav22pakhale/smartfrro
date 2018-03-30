@@ -12,11 +12,8 @@
 <body>
 <header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <img src="images/got-logo.png" class="navbar-brand img-responsive rounded" style="height: 125px;width:125px;margin-left: 90px"></a>
-   <h1 style="color: white;"><b>e-Smart</b>Frro</h1> 
-      <a href="logout.php"><button class="btn btn-outline-success my-2 my-sm-0 btn-lg" type="submit" style="margin-left: 880px" >LOGOUT</button></a>
-  
+  <img src="images/got-logo.png" class="navbar-brand img-responsive rounded" style="height: 100px;width:100px;display: inline;  margin-left: 90px;" />
+    <h1 style="color: white;"><b>e-Smart</b>Frro</h1>
+      <a href="logout.php" style="margin-left: 60%"><button class="btn btn-outline-danger my-2 my-sm-0 btn-lg" type="submit" style="" ><b>LOGOUT</b></button></a>
 </nav>
 </header>
-</body>
-</html>
