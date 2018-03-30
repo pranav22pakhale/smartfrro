@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Registration Form</title>
+    <title>Registration Form (Medical Department)</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -19,8 +19,6 @@
 
 </header>
 <?php
-    session_start();
-
  require_once 'header.php'
 ?>
 <div class="w-100 p-3" style="background-color: #eee;">
@@ -50,17 +48,20 @@
 
 <section style="margin-top: 50px;">
     <div  class="container"> 
-        <form action="insertion_education.php" id="msform" method="POST" >
+        <form action="insertion_medical.php" id="msform" method="POST" >
 
             
 
             <fieldset>
-                <h2 class="fs-title">Education Details</h2>
+                <h2 class="fs-title">Medical Details</h2>
          		<h3 class="fs-subtitle">Purpose</h3>
-                <input type="text" name="institute_name" placeholder="Institute Name"  class="form-control"  />
-                <input type="text" name="institute_location" placeholder="Institute Location" />
-                <input type="text" name="course_name" placeholder="Course Name" />
-                <input type="text" name="course_duration" placeholder="Course Duration" />
+                <input type="text" name="hospital_name" placeholder="Hospital name"  class="form-control"  />
+                <input type="text" name="hospital_location" placeholder="Hospital location" />
+                <input type="text" name="medical_specialist" placeholder="Medical specialist" />
+                <input type="text" name="specialist_name" placeholder="Specialist name" />
+                <label for="admit_date">Admit date</label>
+                <input type="date" name="admit_date" placeholder="Admit date"  />
+
                 <input type="submit" name="next" class="next action-button" value="Next"/>
             </fieldset>
 

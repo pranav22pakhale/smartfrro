@@ -10,8 +10,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+    <!-- <style>
+            body
+            {
+                background-image: url('images/hyderabad4.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+
+            .outer
+            {
+                height: 28%;
+                width: 28%;
+                position: fixed;
+                top: 15%;
+                left: 35%;
+            }
+        </style> -->
+
 </head>
-    
+  
+
+
 <script type="text/javascript">
     function clk1(inputfield){
         if(inputfield.value.length==0)
@@ -25,7 +50,7 @@
 
 </script>
 
-<body>
+<body >
 <!--div class="container">
   <h1>My First Bootstrap Page</h1>
   <p>This is some text.</p>
@@ -70,8 +95,10 @@
 </div>
 
 <section style="margin-top: 50px;">
+
     <div  class="container"> 
-        <form action="Profile/insertion_reg.php" id="msform" method="POST" enctype="multipart/form-data">
+        <form action="preview_form.php" id="msform" method="POST" target="_blank" enctype="multipart/form-data">
+
 
             <ul id="progressbar">
                 <li class="active">Personal Detail Page 1</li>
@@ -81,7 +108,7 @@
                 <li>Visa Details</li>
             </ul>
 
-            <fieldset>
+            <fieldset >
                 <h2 class="fs-title">Personal Details</h2>
                 <h3 class="fs-subtitle">This is step 1</h3>
                  <input type="text" name="surname" placeholder="Surname"  value="<?php echo ucfirst($row["surname"]);?>"  readonly />
@@ -90,9 +117,13 @@
                 <input type="text" name="mother_name" placeholder="Mother's Name"  />
                 <input type="text" name="spouse_name" placeholder="Spouse's Name"  />
                 <input type="text" name="religion" placeholder="Religion" />
-                <select class="form-control">
-                    <option>Select Purpose</option>
+                <select class="form-control" name="purpose">
+                    <option >Select Purpose</option>
                     <option value="education">Education</option>
+                    <option value="medical">Medical</option>
+                    <option value="jouranlism">Jouranlism</option>
+                    <option value="other">Others</option>
+                    
                 </select>
                 <input type="button" name="next" class="next action-button" value="Next" />
             </fieldset>
@@ -168,7 +199,7 @@
                 <input type="text" name="visa_type" placeholder="Visa Type"/>
                 <input type="text" name="vsub" placeholder="Visa Subtype" />
                 <input type="button" name="previous" class="previous action-button" value="Previous" />
-                <button type="submit" class=" action-button" name="submit">SUBMIT</button>
+                <button type="submit" class=" action-button" name="submit">PREVIEW</button>
             </fieldset>
 
         </form>

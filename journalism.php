@@ -19,8 +19,6 @@
 
 </header>
 <?php
-    session_start();
-
  require_once 'header.php'
 ?>
 <div class="w-100 p-3" style="background-color: #eee;">
@@ -50,17 +48,17 @@
 
 <section style="margin-top: 50px;">
     <div  class="container"> 
-        <form action="insertion_education.php" id="msform" method="POST" >
+        <form action="insertion_journalism.php" id="msform" method="POST" >
 
             
 
             <fieldset>
-                <h2 class="fs-title">Education Details</h2>
+                <h2 class="fs-title">Journalist Details</h2>
          		<h3 class="fs-subtitle">Purpose</h3>
-                <input type="text" name="institute_name" placeholder="Institute Name"  class="form-control"  />
-                <input type="text" name="institute_location" placeholder="Institute Location" />
-                <input type="text" name="course_name" placeholder="Course Name" />
-                <input type="text" name="course_duration" placeholder="Course Duration" />
+
+                <input type="text" name="duration" placeholder="Duration in Months" class="form-control" />
+                <input type="text" name="company_name" placeholder="Company Name" />
+                <input type="text" name="purpose_in_brief" placeholder="Mention purpose in brief" />
                 <input type="submit" name="next" class="next action-button" value="Next"/>
             </fieldset>
 

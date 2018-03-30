@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username1 = "root";
 $password = "";
-$dbname = "sms_gateway";
+$dbname = "frro";
 
 // Create connection
 $conn = new mysqli($servername, $username1, $password, $dbname);
