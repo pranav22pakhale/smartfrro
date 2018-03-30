@@ -1,4 +1,7 @@
 <?php
+
+	session_start();
+
 	require_once 'database_connection.php';
 	if(isset($_POST['surname']))
 	{
@@ -26,6 +29,7 @@
 	}
 	if(isset($_POST['purpose']))
 	{
+		echo "hello";
 		$purpose=$_POST['purpose'];
 	}
 	if(isset($_POST['dob']))
@@ -244,8 +248,18 @@ if ($uploadOk == 0) {
     $result = mysqli_query($con,$sql);
 
   	//header("Location:thankyou.php");
-
-    header("Location:/smartfrro/education.php");
+     if($purpose=="education"){
+     	header("Location:/smartfrro/education.php");
+     }
+    // elseif($purpose==medical){
+    // 	header("Location:/smartfrro/medical.php");
+    // }
+    // elseif($purpose==journalism){
+    // 	header("Location:/smartfrro/journalism.php");
+    // }
+    // elseif($purpose==others){
+    // 	header("Location:/smartfrro/others.php");
+    // }
 
 
 ?>
