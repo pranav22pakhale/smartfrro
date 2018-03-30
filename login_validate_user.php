@@ -31,10 +31,10 @@
 		{
 		$_SESSION["username"] = $uname;
 		$_SESSION["password"] = $password;
-
+		$_SESSION['user'] = $result->fetch_assoc();
 		//$_SESSION["mobile_no"] = $row[1];
 		$_SESSION["pass"] = $row[0];
-
+		$_SESSION['user_logged'] = true;
 		header("Location:check_for_registration.php");
 		}
 		else{
