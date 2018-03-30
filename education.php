@@ -19,6 +19,8 @@
 
 </header>
 <?php
+    session_start();
+
  require_once 'header.php'
 ?>
 <div class="w-100 p-3" style="background-color: #eee;">

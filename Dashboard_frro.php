@@ -164,10 +164,9 @@
        
        
 
-       
-        <li><a href=""><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-        <li class="header">LABELS</li>
-       
+       <li><a href="Dashboard_frro.php"><i class="fa fa-book"></i> <span>Dashboard</span></a></li>
+        <li><a href="purpose.php?dept=all"><small><i class="fa fa-male"></i><i class="fa fa-child"></i><i class="fa fa-female"></i></small> <span>Population</span></a></li>
+        <li><a href="purpose.php?dept=all"><i class="fa fa-bullseye"></i> <span>Purpose</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -600,7 +599,7 @@
       <!-- /.row --
     </section>
     <!-- /.content -->
-
+</section>
   </div>
   <!-- /.content-wrapper -->
 <footer class="main-footer">

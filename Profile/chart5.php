@@ -2,7 +2,9 @@
 
 require_once 'head.php';
 
+if(!isset($_SESSION)){
 session_start();
+}
 
 ?>
 <!DOCTYPE html>
@@ -17,7 +19,8 @@ session_start();
         <!-- Custom Styles-->
     <link href="custom-styles.css" rel="stylesheet" />
      <!-- Google Fonts-->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> -->
+   <link href="assets/googlefont/chart.css" rel='stylesheet' type='text/css' />
    <style type="text/css">
       .image-circle{
     border-radius: 50%;
@@ -49,14 +52,14 @@ session_start();
             </ul>
         
 		</nav>
-		<?php session_start();
+		<?php
 	define('mysql_host','localhost');
 define('mysql_user','root');
 define('mysql_pwd','');
 
 $conn = mysqli_connect(mysql_host,mysql_user,mysql_pwd) or die('Can not connect to database..try again');
 mysqli_select_db($conn,'frro') or die(mysqli_error($conn));
-$email_id=$_SESSION["email_id"];
+$email_id=$_SESSION["email_id"];=
 
 
 $sql = "SELECT profile_pic FROM registration WHERE email_id='".$email_id."'";

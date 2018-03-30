@@ -15,7 +15,8 @@ require_once 'head.php';
         <!-- Custom Styles-->
     <link href="custom-styles.css" rel="stylesheet" />
      <!-- Google Fonts-->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> -->
+   <link href="assets/googlefont/chart.css" rel='stylesheet' type='text/css' />
    <style type="text/css">
       .image-circle{
     border-radius: 50%;
