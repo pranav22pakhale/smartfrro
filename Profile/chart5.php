@@ -57,7 +57,7 @@ define('mysql_pwd','');
 
 $conn = mysqli_connect(mysql_host,mysql_user,mysql_pwd) or die('Can not connect to database..try again');
 mysqli_select_db($conn,'frro') or die(mysqli_error($conn));
-$email_id=$_SESSION["email_id"];
+$email_id=$_SESSION["email_id"];=
 
 
 $sql = "SELECT profile_pic FROM registration WHERE email_id='".$email_id."'";

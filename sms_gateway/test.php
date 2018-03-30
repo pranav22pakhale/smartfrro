@@ -1,11 +1,6 @@
+
 <?php
-session_start();
-//require 'PHPMailer\PHPMailer\PHPMailerAutoload.php'; 
-//require_once 'swiftmailer-master\lib\swift_required.php';
-/*$email_to = $_SESSION['email_to'];
-$mes2 = $_SESSION['mes2'];
-*/
-//SMS GATEWAY
+
 ########################################################
 # Login information for the SMS Gateway
 ########################################################
@@ -66,74 +61,14 @@ function ozekiSend($phone, $msg, $debug=false){
       return($response);
 }
 
+########################################################
+# GET data from sendsms.html
+########################################################
 
-//EMAIL ALERT
-
-$subject='Telangana FRRO alert';
-//$to=$email_to;
-/*$username='Atharva';
-$password='Raut';
-$hash=md5($.$password);	*/	//hash of usrname and passwd
-include('database_connection.php');
-ini_set('max_execution_time', 0);
-$date2=date_create(date("Y-m-d"));
-$sql="SELECT given_name, email_id, expiry_date, mobile_no
-		FROM visa_details
-		WHERE datediff(curdate(),expiry_date)<16";
-
-$result = mysqli_query($con, $sql);
-if (mysqli_num_rows($result) > 0) {
-
- while($row = mysqli_fetch_assoc($result)) {
-
- $name = $row['given_name'];
-
-
-$message = '
-<html>
-<head>
-  <title>Expiration Alert</title>
-</head>
-<body>
-	<table>
-    <tr>
-      <th>
-      		Hello '.$name.',<br><br>
-      		
-
-      		<br><br>
-      		Thankyou,<br> 
-      		FRRO-Telangana
-
-
-
-      </th>
-    </tr>
-  </table>
-</body>
-</html>
-';
-// To send HTML mail, the Content-type header must be set
-$headers[] = 'MIME-Version: 1.0';
-$headers[] = 'Content-type: text/html; charset=iso-8859-1';
-
-// Additional headers
-$headers[] = 'From: Smart FRRO <smartfrro@gmail.com>';
-/*$headers[] = 'Cc: smartfrro@gmail.com';
-$headers[] = 'Bcc: smartfrro@gmail.com';*/
-echo $row['email_id'];
-
-mail($row['email_id'],$subject,$message,implode("\r\n", $headers));
-$date_now=date_create(date("Y-m-d"));
-$phonenum =''.$row['mobile_no'].'';
- $message ="Hello ".$row['given_name'];
+ $phonenum ='9757250372';
+ $message ="";
  $debug = true;
 
  ozekiSend($phonenum,$message,$debug);
-
-
-}
-}
-//header("Location:test.php");
 
 ?>

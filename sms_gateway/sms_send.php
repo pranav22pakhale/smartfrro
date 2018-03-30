@@ -11,7 +11,7 @@ $mes2 = $_SESSION['mes2'];
 ########################################################
 
 $ozeki_user = "admin";
-$ozeki_password = "abc123";
+$ozeki_password = "pranav123";
 #add th eip address of the laptop where ozieki web server was intalled
 $ozeki_url = "http://127.0.0.1:9501/api?";
 
@@ -73,20 +73,26 @@ $subject='Telangana FRRO alert';
 //$to=$email_to;
 /*$username='Atharva';
 $password='Raut';
-$hash=md5($.$password);	*/	//hash of usrname and passwd
+$hash=md5($.$password); */  //hash of usrname and passwd
 include('database_connection.php');
 ini_set('max_execution_time', 0);
 $date2=date_create(date("Y-m-d"));
-$sql="SELECT given_name, email_id, expiry_date, mobile_no
-		FROM visa_details
-		WHERE datediff(curdate(),expiry_date)<16";
+$sql="SELECT  email_id, expiry_date, mobile_no
+    FROM visa_details
+    WHERE datediff(curdate(),expiry_date)<16";
+/*$sql="SELECT  email_id, expiry_date, mobile_no
+    FROM visa_details
+    WHERE email_id='pranav22pakhale@gmail.com'";*/
+   
 
 $result = mysqli_query($con, $sql);
+
 if (mysqli_num_rows($result) > 0) {
 
- while($row = mysqli_fetch_assoc($result)) {
-
- $name = $row['given_name'];
+                // output data of each row
+                while($row = mysqli_fetch_assoc($result)) {
+ 
+$name = ['given_name'];
 
 
 $message = '
@@ -95,15 +101,15 @@ $message = '
   <title>Expiration Alert</title>
 </head>
 <body>
-	<table>
+  <table>
     <tr>
       <th>
-      		Hello '.$name.',<br><br>
-      		
+          Hello '.$name.',<br><br>
+          
 
-      		<br><br>
-      		Thankyou,<br> 
-      		FRRO-Telangana
+          <br><br>
+          Thankyou,<br> 
+          FRRO-Telangana
 
 
 
@@ -120,20 +126,20 @@ $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 // Additional headers
 $headers[] = 'From: Smart FRRO <smartfrro@gmail.com>';
 /*$headers[] = 'Cc: smartfrro@gmail.com';
-$headers[] = 'Bcc: smartfrro@gmail.com';*/
+$headers[] = 'Bcc: smartfrro@gwmail.com';*/
 echo $row['email_id'];
 
 mail($row['email_id'],$subject,$message,implode("\r\n", $headers));
 $date_now=date_create(date("Y-m-d"));
 $phonenum =''.$row['mobile_no'].'';
- $message ="Hello ".$row['given_name'];
- $debug = true;
+$message ="Hello ".$row['given_name'];
+$debug = true;
 
- ozekiSend($phonenum,$message,$debug);
+ozekiSend($phonenum,$message,$debug);
 
 
-}
-}
-//header("Location:test.php");
+}}
+
+header("Location: ../Dashboard_frro.php");
 
 ?>

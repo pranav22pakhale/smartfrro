@@ -33,7 +33,7 @@
       <img src="images/got-logo.png" class="img-responsive rounded" style="height: 90px; margin-left:  85px;"-->
   <!--a class="navbar-brand" href="#" style="align:center;"><h1>Fixed top</h1></a-->
 
-  <?php require_once 'header.php'?>
+  <?php require_once 'header1.php'?>
 </nav>
 
 </header>
