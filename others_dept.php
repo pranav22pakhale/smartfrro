@@ -48,7 +48,11 @@
 
 <section style="margin-top: 50px;">
     <div  class="container"> 
+<<<<<<< HEAD
+        <form action="insertion_medical.php" id="msform" method="POST" >
+=======
         <form action="insertion_others_dept.php" id="msform" method="POST" >
+>>>>>>> aeb45f341fe02fc5b883ee63e030a30bb9cae2b2
 
             
 
@@ -56,11 +60,19 @@
                 <h2 class="fs-title">Other purpose details</h2>
          		<h3 class="fs-subtitle">Purpose</h3>
                 <input type="text" name="purpose_in_brief" placeholder="Purpose in brief"  class="form-control"  />
+<<<<<<< HEAD
+                <input type="text" name="invitor_name" placeholder="Invitor Name" />
+                <input type="text" name="invitor_contact_no" placeholder="Invitor Contact No." />
+                <input type="text" name="invitor_email_id" placeholder="Invitor Email id" />
+                <input type="text" name="invitor_location" placeholder="Invitor Loacation" />
+                <input type="text" name="duration" placeholder="Duration" />
+=======
                 <input type="text" name="inviter_name" placeholder="Invitor Name" />
                 <input type="text" name="inviter_contact_no" placeholder="Inviter Contact No." />
                 <input type="text" name="inviter_email_id" placeholder="Inviter Email id" />
 
                 <input type="text" name="duration" placeholder="Duration in Months" />
+>>>>>>> aeb45f341fe02fc5b883ee63e030a30bb9cae2b2
 
 
                 <input type="submit" name="next" class="next action-button" value="Next"/>
