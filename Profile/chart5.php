@@ -2,7 +2,9 @@
 
 require_once 'head.php';
 
+if(!isset($_SESSION)){
 session_start();
+}
 
 ?>
 <!DOCTYPE html>
@@ -49,7 +51,7 @@ session_start();
             </ul>
         
 		</nav>
-		<?php session_start();
+		<?php
 	define('mysql_host','localhost');
 define('mysql_user','root');
 define('mysql_pwd','');
