@@ -10,22 +10,15 @@ mysqli_select_db($conn,'frro') or die(mysqli_error($conn));
 
 // Create connection
 // Check connection
-
-$emailid=$_SESSION['emailid'];
-
-	//$sql = "UPDATE registration SET registration.police_enquiry= WHERE email_id='ross.taylor@gmail.com' ";
- $sql ="Select email_id from registration where email_id='".$emailid."'";
-
-$result = mysqli_query($conn,$sql);
-
-if(mysqli_num_rows($result)){
-	header("Location:Profile/user_profile.php");
-
-}
-else{
-	header("Location:main_registration_form.php");
-
-}
-
-	
-	?>
+		
+				$emailid=$_SESSION['emailid'];
+				$sql ="Select email_id from registration where email_id='".$emailid."'";
+				$result = mysqli_query($conn,$sql);
+				
+				if(mysqli_num_rows($result) > 0){
+					header("Location:Profile/user_profile.php");
+				}
+				else{
+					header("Location:main_registration_form.php");
+		}
+?>

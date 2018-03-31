@@ -6,9 +6,9 @@ require_once 'head.php';
 
 include('database_connection.php');
 
-$sql = "SELECT registration.email_id, registration.given_name,registration.surname, passport_details.passport_number, address_details.phone_number_in_india 
+$sql = "SELECT registration.email_id, registration.given_name,registration.surname, passport_details.passport_number, address_details.phone_number_in_india,registration.police_enquiry
         FROM registration, passport_details,address_details 
-        WHERE registration.email_id=passport_details.email_id AND registration.police_enquiry='requested' AND registration.email_id=address_details.email_id";
+        WHERE registration.email_id=passport_details.email_id AND registration.police_enquiry='requested' OR registration.police_enquiry='done' AND registration.email_id=address_details.email_id";
 $result = mysqli_query($con, $sql);
 
 ?>
@@ -20,7 +20,8 @@ $result = mysqli_query($con, $sql);
                 <th>NAME</th>
                 <th>PASSPORT NO</th>
                 <th>EMAIL ID</th>
-                <th>Contact No.</th>                
+                <th>Contact No.</th>
+                <th>Police Enquiry Status</th>                
             </tr>
         </thead>
         <tbody>
@@ -36,7 +37,7 @@ $result = mysqli_query($con, $sql);
                     echo "<td> <a href='../Profile/chart.php?id=".$row["email_id"]."'>".$row["passport_number"]."</a></td>";
                     echo "<td>  <a href='../Profile/chart.php?id=".$row["email_id"]."'>". $row["email_id"]. "</a></td>";
                     echo "<td>  <a href='../Profile/chart.php?id=".$row["email_id"]."'>". $row["phone_number_in_india"]. "</a></td>";
-                    
+                       echo "<td>  <a href='../Profile/chart.php?id=".$row["email_id"]."'>". $row["police_enquiry"]. "</a></td>";
                     echo "</tr>";
                 }
                 echo "</table>";

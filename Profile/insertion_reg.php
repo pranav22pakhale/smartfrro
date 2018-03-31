@@ -1,6 +1,8 @@
 <?php
 
+	if(!isset($_SESSION)){
 	session_start();
+	}
 
 	require_once 'database_connection.php';
 	if(isset($_POST['surname']))
@@ -96,6 +98,7 @@
 	if(isset($_POST['passport_no']))
 	{
 		$passport_no=$_POST['passport_no'];
+		
 	}
 	if(isset($_POST['country_of_issue']))
 	{
@@ -142,12 +145,10 @@
 	{
 		$vsub=$_POST['vsub'];
 	}
-
 $target_file = $_POST['f1'];
 $target_file1 = $_POST['f2'];
 
     $sql = "insert into registration (surname,given_name,sex,father_name,mother_name,spouse_name,dob,religion,purpose,present_nationality,previous_nationality,indian_origin,profile_pic,document,email_id,verification) values ('$surname','$given_name','$sex','$father_name','$mother_name','$spouse_name','$dob','$religion','$purpose','$pre_nationality','$prev_nationality','$origin','$target_file','$target_file1','$email_id','unverified')";
-
 
     $result = mysqli_query($con,$sql);
 
@@ -160,7 +161,7 @@ $target_file1 = $_POST['f2'];
 
     $result =mysqli_query($con,$sql);
 
-    $sql = "insert into visa_details (visa_number,country_of_issue,place_of_issue,date_of_issue,expiry_date,visa_type,visa_subtype,email_id) values ('$visa_number','$vcountry_of_issue','$vplace_of_issue','$vdate_of_issue','$vexpiry_date','$visa_type','$vsub','$email_id')";
+    $sql = "insert into visa_details (visa_number,country_of_issue,place_of_issue,date_of_issue,expiry_date,visa_type,visa_subtype,email_id,mobile_no,given_name) values ('$visa_number','$vcountry_of_issue','$vplace_of_issue','$vdate_of_issue','$vexpiry_date','$visa_type','$vsub','$email_id','$phone','$given_name')";
 
     $result = mysqli_query($con,$sql);
 
@@ -169,10 +170,10 @@ $target_file1 = $_POST['f2'];
 	$pur=$_POST["purpose"];
 	if($pur=="education")
 	{header("Location:../education.php");}
-	if($pur=="journalism")
+	else if($pur=="journalism")
 		{header("Location:../journalism.php ");}
-	if($pur=="medical")
+	else if($pur=="medical")
 		{header("Location: ../medical_dept.php");}
-	if($pur=="other")
+	else if($pur=="other")
 		{header("Location:../others_dept.php");}
 ?>

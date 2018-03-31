@@ -128,7 +128,7 @@ if ($result->num_rows > 0) {
 	<?php
 	
 
-$sql = "SELECT* FROM education_dept WHERE email_id='".$emailid."'";
+$sql = "SELECT * FROM education_dept WHERE email_id='".$emailid."'";
 /*$sql = "SELECT* FROM education_dept WHERE email_id='e1'";*/
 $result = $conn->query($sql);
 
@@ -182,7 +182,7 @@ if ($result->num_rows > 0) {
                 
            </div>
 		    <!-- /. ROW  -->
-				 <footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez</a></p></footer>
+				
 				
              <!-- /. PAGE INNER  -->
            </div>

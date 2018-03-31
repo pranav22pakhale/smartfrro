@@ -15,7 +15,7 @@ $date2=date_create(date("Y-m-d"));
 /*$sql="SELECT email_id, visa_number, expiry_date,mobile_no
 		FROM visa_details
 		WHERE (datediff(curdate(),expiry_date)=15 )";*/
-    $sql="SELECT  email_id, expiry_date, mobile_no
+    $sql="SELECT  email_id, expiry_date, mobile_no,visa_number
     FROM visa_details
     WHERE datediff(curdate(),expiry_date)<16";
 

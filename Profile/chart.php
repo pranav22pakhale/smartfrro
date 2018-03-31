@@ -37,7 +37,7 @@ require_once 'head.php';
 </head>
 <body style="overflow: hidden;">
     <div id="wrapper">
-        <!--nav class="navbar navbar-default top-navbar" role="navigation">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
                 <a class="navbar-brand" ><strong>e FRRO Online Service</strong></a>
             </div>
@@ -48,11 +48,11 @@ require_once 'head.php';
             </ul>
         
 		
-		</nav-->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar" style="height: 100px;">
+		</nav>
+    <!--nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar" style="height: px;">
       <div class="container">
         <img src="/smartfrro/images/got-logo.png" height="79" width="79" style="display: inline-block;">
-        <h1 style="display: inline-block;"><b>e-Smart</b>frro</h1>
+        <h1 style="display: inline-block;"><b>e-Smart</b>frro</h1-->
 
 
       </div>
@@ -62,7 +62,7 @@ require_once 'head.php';
     session_start();
     define('mysql_host','localhost');
 define('mysql_user','root');
-define('mysql_pwd','niks2903');
+define('mysql_pwd','');
 
 $conn = mysqli_connect(mysql_host,mysql_user,mysql_pwd) or die('Can not connect to database..try again');
 mysqli_select_db($conn,'frro') or die(mysqli_error($conn));

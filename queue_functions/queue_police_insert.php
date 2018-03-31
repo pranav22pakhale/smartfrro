@@ -46,5 +46,5 @@ $sql2="UPDATE queue SET police_enquiry='".$data_row[$i]['police_enquiry']."' WHE
 mysqli_query($con2, $sql2);
 $i--;
 }
-echo "very nice";
+header("Location:/smartfrro/Dashboard_police.php");
 ?>

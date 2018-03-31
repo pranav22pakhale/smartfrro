@@ -57,5 +57,5 @@ $sql2="INSERT INTO police(name,surname,email_id,purpose,issue_date,expiry_date,l
 mysqli_query($con2, $sql2);
 $i--;
 }
-echo "very nice";
+header("Location:/smartfrro/Dashboard_police.php");
 ?>

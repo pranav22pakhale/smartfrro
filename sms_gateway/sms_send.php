@@ -95,6 +95,14 @@ if (mysqli_num_rows($result) > 0) {
 $name =$row ['given_name'];
 
 
+    
+$date = new DateTime($row['expiry_date']);
+$now = new DateTime();
+
+$differ = $date->diff($now)->format("%d");
+
+echo $differ;
+
 $message = '
 <html>
 <head>
@@ -105,7 +113,7 @@ $message = '
     <tr>
       <th>
           Hello '.$name.',<br><br>
-          Your Visa will be expiring after '.date_diff($date2,$row[expiry_date]).' days.
+          Your Visa will be expiring after '.$differ.' days.
 
           <br><br>
           Thankyou,<br> 
@@ -133,7 +141,8 @@ mail($row['email_id'],$subject,$message,implode("\r\n", $headers));
 $date_now=date_create(date("Y-m-d"));
 $phonenum =''.$row['mobile_no'].'';
 $message ="Hello ".$row['given_name'].
-"Your Visa will be expiring after".date_diff($date2,$row[expiry_date])." days".
+"
+Your Visa will be expiring after ".$differ." days"
 ;
 $debug = true;
 

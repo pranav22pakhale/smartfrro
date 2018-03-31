@@ -15,7 +15,7 @@ $email_id=$_SESSION["email_id"];
 
 
 	//$sql = "UPDATE registration SET registration.police_enquiry= WHERE email_id='ross.taylor@gmail.com' ";
-$sql ="update registration set verification ='requested' where email_id='" .$email_id."'"; 
+$sql ="update registration set police_enquiry ='requested' where email_id='" .$email_id."'"; 
 
 $result = $conn->query($sql);
 

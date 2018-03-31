@@ -21,7 +21,7 @@
 	
 	
 
-	$sql = "insert into education_dept (institute_name,institute_location,email_id,course_name,course_duration) values ('".$institute_name."','".$institute_location."','".$email_id."','".$course_name."','".$course_duration."')";
+	$sql = "insert into education_dept (institute_name,institute_location,email_id,course_name,course_duration) values ('".$institute_name."','".$institute_location."','".$_SESSION["username"]."','".$course_name."','".$course_duration."')";
 
 	$result = mysqli_query($con,$sql);
     

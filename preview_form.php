@@ -190,7 +190,7 @@ echo sprintf('<embed src="data:application/pdf;base64,%s" width="800px" height="
     <div class="form-group col-md-6">
       <label >Passport No.</label>
       
-	  <input type="date" class="form-control" name="passport_no" placeholder="Date of Birth"   value="<?php echo $_POST["passport_no"];?>"/>
+	  <input type="text" class="form-control" name="passport_no" placeholder="Date of Birth"   value="<?php echo $_POST["passport_no"];?>"/>
     </div>
     <div class="form-group col-md-6">
        <label >Country of Issue</label>

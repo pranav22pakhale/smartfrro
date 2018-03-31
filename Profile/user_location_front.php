@@ -22,7 +22,7 @@
   <nav class="navbar navbar-dark bg-dark">
     <img src="/smartfrro/images/got-logo.png" height="79px" width="79px" style="margin-left: 90px;">
     <h1 style="color:white;margin-left:-70px;"> <b>e-Smart</b>Frro</h1>
-     <a href="logout.php"><button class="btn btn-outline-danger my-2 my-sm-0 btn-lg" type="submit" style="margin-left: 880px" >LOGOUT</button></a>
+     <a href="/smartfrro/logout.php"><button class="btn btn-outline-danger my-2 my-sm-0 btn-lg" type="submit" style="margin-left: 880px" >LOGOUT</button></a>
   <!--span class="navbar-brand mb-0 h1">Navbar</span-->
 </nav>
 </header>

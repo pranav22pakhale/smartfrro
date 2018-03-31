@@ -58,7 +58,7 @@
           </div>
           
           
-          <button class="button button-block" name="login" />Log In</button>
+          <button type="submit" class="button button-block" name="login" />Log In</button>
           
           </form>
 

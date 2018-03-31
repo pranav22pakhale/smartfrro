@@ -27,7 +27,9 @@
               
               <?php
 
-                     session_start();
+                     if(!isset($_SESSION)){
+    session_start();
+}
                     require_once 'database_connection.php';
 
                     $uname = $_SESSION["username"];
@@ -42,7 +44,7 @@
                     echo '<span style="padding-right:150px">Passport No: '.$row["passport_no"].'</span>';
                     echo '<span style="padding-right:150px">Mobile: '.$row["mobile_no"].'</span>';
 
-
+                    $_SESSION["email"] = $uname;
                      
                     
               ?>

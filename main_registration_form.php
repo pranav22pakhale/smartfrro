@@ -50,11 +50,7 @@
 
 </script>
 
-<<<<<<< HEAD
-<body style="overflow: hidden;">
-=======
-<body >
->>>>>>> efd1317850fa10d3633ad49db5e3ec9b4e33b2a4
+<body>
 <!--div class="container">
   <h1>My First Bootstrap Page</h1>
   <p>This is some text.</p>
